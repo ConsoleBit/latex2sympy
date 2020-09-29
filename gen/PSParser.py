@@ -1,18 +1,14 @@
-# Generated from PS.g4 by ANTLR 4.8
+# Generated from PS.g4 by ANTLR 4.7.2
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
+from typing.io import TextIO
 import sys
-if sys.version_info[1] > 5:
-	from typing import TextIO
-else:
-	from typing.io import TextIO
-
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3q")
-        buf.write("\u02ee\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3|")
+        buf.write("\u02f7\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
         buf.write("\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31")
@@ -59,30 +55,31 @@ def serializedATN():
         buf.write("\35\3\35\3\35\3\35\3\35\3\35\3\35\3\35\3\35\3\35\3\35")
         buf.write("\3\35\3\35\3\35\3\35\5\35\u01de\n\35\3\36\3\36\3\36\3")
         buf.write("\36\3\36\3\37\3\37\3\37\5\37\u01e8\n\37\3\37\5\37\u01eb")
-        buf.write("\n\37\3\37\3\37\3\37\3\37\3\37\3\37\3\37\5\37\u01f4\n")
-        buf.write("\37\3 \3 \3 \3 \3 \3!\6!\u01fc\n!\r!\16!\u01fd\3\"\3\"")
-        buf.write("\3\"\3\"\3\"\3\"\3\"\3\"\3#\3#\3#\3#\3#\3#\3#\3#\3$\3")
-        buf.write("$\3%\3%\3&\3&\3\'\3\'\3(\3(\3(\3(\3(\3(\5(\u021e\n(\3")
-        buf.write(")\3)\3)\3)\3)\3)\5)\u0226\n)\3*\3*\5*\u022a\n*\3*\5*\u022d")
-        buf.write("\n*\3*\5*\u0230\n*\3*\5*\u0233\n*\5*\u0235\n*\3*\5*\u0238")
-        buf.write("\n*\3*\3*\3*\5*\u023d\n*\3*\3*\3*\5*\u0242\n*\3*\3*\3")
-        buf.write("*\5*\u0247\n*\3*\3*\3*\5*\u024c\n*\3*\3*\5*\u0250\n*\3")
-        buf.write("*\5*\u0253\n*\3*\5*\u0256\n*\3*\5*\u0259\n*\5*\u025b\n")
-        buf.write("*\3*\5*\u025e\n*\3*\3*\3*\5*\u0263\n*\3*\3*\3*\5*\u0268")
-        buf.write("\n*\3*\3*\3*\5*\u026d\n*\3*\3*\3*\5*\u0272\n*\3*\3*\3")
-        buf.write("*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3")
-        buf.write("*\5*\u0289\n*\3*\5*\u028c\n*\3*\3*\3*\5*\u0291\n*\3*\3")
-        buf.write("*\3*\3*\3*\5*\u0298\n*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3")
-        buf.write("*\5*\u02a5\n*\3*\3*\3*\3*\3*\3*\3*\3*\5*\u02af\n*\5*\u02b1")
-        buf.write("\n*\3+\3+\3+\3+\3+\5+\u02b8\n+\3,\3,\3,\3,\3,\3,\3,\3")
-        buf.write(",\3,\5,\u02c3\n,\3,\3,\3-\3-\3.\3.\3/\3/\3/\3/\3/\5/\u02d0")
-        buf.write("\n/\3\60\3\60\3\61\3\61\3\61\3\61\3\61\3\61\5\61\u02da")
-        buf.write("\n\61\3\62\3\62\3\62\3\62\3\62\3\62\5\62\u02e2\n\62\3")
+        buf.write("\n\37\3\37\3\37\3\37\3\37\3\37\3\37\3\37\3\37\3\37\3\37")
+        buf.write("\3\37\3\37\3\37\3\37\3\37\3\37\5\37\u01fd\n\37\3 \3 \3")
+        buf.write(" \3 \3 \3!\6!\u0205\n!\r!\16!\u0206\3\"\3\"\3\"\3\"\3")
+        buf.write("\"\3\"\3\"\3\"\3#\3#\3#\3#\3#\3#\3#\3#\3$\3$\3%\3%\3&")
+        buf.write("\3&\3\'\3\'\3(\3(\3(\3(\3(\3(\5(\u0227\n(\3)\3)\3)\3)")
+        buf.write("\3)\3)\5)\u022f\n)\3*\3*\5*\u0233\n*\3*\5*\u0236\n*\3")
+        buf.write("*\5*\u0239\n*\3*\5*\u023c\n*\5*\u023e\n*\3*\5*\u0241\n")
+        buf.write("*\3*\3*\3*\5*\u0246\n*\3*\3*\3*\5*\u024b\n*\3*\3*\3*\5")
+        buf.write("*\u0250\n*\3*\3*\3*\5*\u0255\n*\3*\3*\5*\u0259\n*\3*\5")
+        buf.write("*\u025c\n*\3*\5*\u025f\n*\3*\5*\u0262\n*\5*\u0264\n*\3")
+        buf.write("*\5*\u0267\n*\3*\3*\3*\5*\u026c\n*\3*\3*\3*\5*\u0271\n")
+        buf.write("*\3*\3*\3*\5*\u0276\n*\3*\3*\3*\5*\u027b\n*\3*\3*\3*\3")
+        buf.write("*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\5")
+        buf.write("*\u0292\n*\3*\5*\u0295\n*\3*\3*\3*\5*\u029a\n*\3*\3*\3")
+        buf.write("*\3*\3*\5*\u02a1\n*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\3*\5")
+        buf.write("*\u02ae\n*\3*\3*\3*\3*\3*\3*\3*\3*\5*\u02b8\n*\5*\u02ba")
+        buf.write("\n*\3+\3+\3+\3+\3+\5+\u02c1\n+\3,\3,\3,\3,\3,\3,\3,\3")
+        buf.write(",\3,\5,\u02cc\n,\3,\3,\3-\3-\3.\3.\3/\3/\3/\3/\3/\5/\u02d9")
+        buf.write("\n/\3\60\3\60\3\61\3\61\3\61\3\61\3\61\3\61\5\61\u02e3")
+        buf.write("\n\61\3\62\3\62\3\62\3\62\3\62\3\62\5\62\u02eb\n\62\3")
         buf.write("\63\3\63\3\63\3\63\3\63\3\64\3\64\3\64\3\64\3\64\3\64")
         buf.write("\2\b\n\24\26\30*,\65\2\4\6\b\n\f\16\20\22\24\26\30\32")
         buf.write("\34\36 \"$&(*,.\60\62\64\668:<>@BDFHJLNPRTVXZ\\^`bdf\2")
         buf.write("\16\3\2YZ\3\2gl\3\2\5\6\6\2\7\bHJNN]]\3\2bd\3\2LM\4\2")
-        buf.write("\37\66DE\4\2BCFG\4\2\67<?@\3\2=>\3\2\35\36\4\2ddoo\2\u0333")
+        buf.write("\37\66DE\4\2BCFG\4\2\67<?@\3\2=>\3\2\35\36\4\2ddqq\2\u0345")
         buf.write("\2h\3\2\2\2\4l\3\2\2\2\6n\3\2\2\2\by\3\2\2\2\n\u0081\3")
         buf.write("\2\2\2\f\u00b1\3\2\2\2\16\u00c7\3\2\2\2\20\u00c9\3\2\2")
         buf.write("\2\22\u00cd\3\2\2\2\24\u00cf\3\2\2\2\26\u00da\3\2\2\2")
@@ -91,13 +88,13 @@ def serializedATN():
         buf.write("\2\2\2&\u011e\3\2\2\2(\u0126\3\2\2\2*\u012e\3\2\2\2,\u0142")
         buf.write("\3\2\2\2.\u015f\3\2\2\2\60\u0169\3\2\2\2\62\u01a7\3\2")
         buf.write("\2\2\64\u01b9\3\2\2\2\66\u01cb\3\2\2\28\u01dd\3\2\2\2")
-        buf.write(":\u01df\3\2\2\2<\u01f3\3\2\2\2>\u01f5\3\2\2\2@\u01fb\3")
-        buf.write("\2\2\2B\u01ff\3\2\2\2D\u0207\3\2\2\2F\u020f\3\2\2\2H\u0211")
-        buf.write("\3\2\2\2J\u0213\3\2\2\2L\u0215\3\2\2\2N\u021d\3\2\2\2")
-        buf.write("P\u0225\3\2\2\2R\u02b0\3\2\2\2T\u02b7\3\2\2\2V\u02b9\3")
-        buf.write("\2\2\2X\u02c6\3\2\2\2Z\u02c8\3\2\2\2\\\u02cf\3\2\2\2^")
-        buf.write("\u02d1\3\2\2\2`\u02d3\3\2\2\2b\u02db\3\2\2\2d\u02e3\3")
-        buf.write("\2\2\2f\u02e8\3\2\2\2hi\t\2\2\2i\3\3\2\2\2jm\5\n\6\2k")
+        buf.write(":\u01df\3\2\2\2<\u01fc\3\2\2\2>\u01fe\3\2\2\2@\u0204\3")
+        buf.write("\2\2\2B\u0208\3\2\2\2D\u0210\3\2\2\2F\u0218\3\2\2\2H\u021a")
+        buf.write("\3\2\2\2J\u021c\3\2\2\2L\u021e\3\2\2\2N\u0226\3\2\2\2")
+        buf.write("P\u022e\3\2\2\2R\u02b9\3\2\2\2T\u02c0\3\2\2\2V\u02c2\3")
+        buf.write("\2\2\2X\u02cf\3\2\2\2Z\u02d1\3\2\2\2\\\u02d8\3\2\2\2^")
+        buf.write("\u02da\3\2\2\2`\u02dc\3\2\2\2b\u02e4\3\2\2\2d\u02ec\3")
+        buf.write("\2\2\2f\u02f1\3\2\2\2hi\t\2\2\2i\3\3\2\2\2jm\5\n\6\2k")
         buf.write("m\5\f\7\2lj\3\2\2\2lk\3\2\2\2m\5\3\2\2\2no\7U\2\2ot\5")
         buf.write("\b\5\2pq\7X\2\2qs\5\b\5\2rp\3\2\2\2sv\3\2\2\2tr\3\2\2")
         buf.write("\2tu\3\2\2\2uw\3\2\2\2vt\3\2\2\2wx\7V\2\2x\7\3\2\2\2y")
@@ -163,7 +160,7 @@ def serializedATN():
         buf.write("\u0108\3\2\2\2\u010b\u010f\5,\27\2\u010c\u010e\5\"\22")
         buf.write("\2\u010d\u010c\3\2\2\2\u010e\u0111\3\2\2\2\u010f\u010d")
         buf.write("\3\2\2\2\u010f\u0110\3\2\2\2\u0110!\3\2\2\2\u0111\u010f")
-        buf.write("\3\2\2\2\u0112\u0115\7m\2\2\u0113\u0115\5$\23\2\u0114")
+        buf.write("\3\2\2\2\u0112\u0115\7o\2\2\u0113\u0115\5$\23\2\u0114")
         buf.write("\u0112\3\2\2\2\u0114\u0113\3\2\2\2\u0115#\3\2\2\2\u0116")
         buf.write("\u011c\7\25\2\2\u0117\u011d\5(\25\2\u0118\u011d\5&\24")
         buf.write("\2\u0119\u011a\5(\25\2\u011a\u011b\5&\24\2\u011b\u011d")
@@ -256,129 +253,135 @@ def serializedATN():
         buf.write("\2\u01dd\u01d1\3\2\2\2\u01dd\u01d7\3\2\2\2\u01de9\3\2")
         buf.write("\2\2\u01df\u01e0\5\2\2\2\u01e0\u01e1\7\13\2\2\u01e1\u01e2")
         buf.write("\5\22\n\2\u01e2\u01e3\7\f\2\2\u01e3;\3\2\2\2\u01e4\u01e8")
-        buf.write("\7d\2\2\u01e5\u01e8\7o\2\2\u01e6\u01e8\5:\36\2\u01e7\u01e4")
+        buf.write("\7d\2\2\u01e5\u01e8\7q\2\2\u01e6\u01e8\5:\36\2\u01e7\u01e4")
         buf.write("\3\2\2\2\u01e7\u01e5\3\2\2\2\u01e7\u01e6\3\2\2\2\u01e8")
         buf.write("\u01ea\3\2\2\2\u01e9\u01eb\5`\61\2\u01ea\u01e9\3\2\2\2")
-        buf.write("\u01ea\u01eb\3\2\2\2\u01eb\u01f4\3\2\2\2\u01ec\u01f4\7")
-        buf.write("p\2\2\u01ed\u01f4\7e\2\2\u01ee\u01f4\7n\2\2\u01ef\u01f4")
-        buf.write("\7f\2\2\u01f0\u01f4\7a\2\2\u01f1\u01f4\5> \2\u01f2\u01f4")
-        buf.write("\7q\2\2\u01f3\u01e7\3\2\2\2\u01f3\u01ec\3\2\2\2\u01f3")
-        buf.write("\u01ed\3\2\2\2\u01f3\u01ee\3\2\2\2\u01f3\u01ef\3\2\2\2")
-        buf.write("\u01f3\u01f0\3\2\2\2\u01f3\u01f1\3\2\2\2\u01f3\u01f2\3")
-        buf.write("\2\2\2\u01f4=\3\2\2\2\u01f5\u01f6\7O\2\2\u01f6\u01f7\7")
-        buf.write("\13\2\2\u01f7\u01f8\5@!\2\u01f8\u01f9\7\f\2\2\u01f9?\3")
-        buf.write("\2\2\2\u01fa\u01fc\t\6\2\2\u01fb\u01fa\3\2\2\2\u01fc\u01fd")
-        buf.write("\3\2\2\2\u01fd\u01fb\3\2\2\2\u01fd\u01fe\3\2\2\2\u01fe")
-        buf.write("A\3\2\2\2\u01ff\u0200\7K\2\2\u0200\u0201\7\13\2\2\u0201")
-        buf.write("\u0202\5\22\n\2\u0202\u0203\7\f\2\2\u0203\u0204\7\13\2")
-        buf.write("\2\u0204\u0205\5\22\n\2\u0205\u0206\7\f\2\2\u0206C\3\2")
-        buf.write("\2\2\u0207\u0208\t\7\2\2\u0208\u0209\7\13\2\2\u0209\u020a")
-        buf.write("\5\22\n\2\u020a\u020b\7\f\2\2\u020b\u020c\7\13\2\2\u020c")
-        buf.write("\u020d\5\22\n\2\u020d\u020e\7\f\2\2\u020eE\3\2\2\2\u020f")
-        buf.write("\u0210\t\b\2\2\u0210G\3\2\2\2\u0211\u0212\t\t\2\2\u0212")
-        buf.write("I\3\2\2\2\u0213\u0214\t\n\2\2\u0214K\3\2\2\2\u0215\u0216")
-        buf.write("\t\13\2\2\u0216M\3\2\2\2\u0217\u021e\5F$\2\u0218\u0219")
-        buf.write("\7P\2\2\u0219\u021a\7\13\2\2\u021a\u021b\5J&\2\u021b\u021c")
-        buf.write("\7\f\2\2\u021c\u021e\3\2\2\2\u021d\u0217\3\2\2\2\u021d")
-        buf.write("\u0218\3\2\2\2\u021eO\3\2\2\2\u021f\u0226\5H%\2\u0220")
-        buf.write("\u0221\7P\2\2\u0221\u0222\7\13\2\2\u0222\u0223\5L\'\2")
-        buf.write("\u0223\u0224\7\f\2\2\u0224\u0226\3\2\2\2\u0225\u021f\3")
-        buf.write("\2\2\2\u0225\u0220\3\2\2\2\u0226Q\3\2\2\2\u0227\u0234")
-        buf.write("\5N(\2\u0228\u022a\5`\61\2\u0229\u0228\3\2\2\2\u0229\u022a")
-        buf.write("\3\2\2\2\u022a\u022c\3\2\2\2\u022b\u022d\5b\62\2\u022c")
-        buf.write("\u022b\3\2\2\2\u022c\u022d\3\2\2\2\u022d\u0235\3\2\2\2")
-        buf.write("\u022e\u0230\5b\62\2\u022f\u022e\3\2\2\2\u022f\u0230\3")
-        buf.write("\2\2\2\u0230\u0232\3\2\2\2\u0231\u0233\5`\61\2\u0232\u0231")
-        buf.write("\3\2\2\2\u0232\u0233\3\2\2\2\u0233\u0235\3\2\2\2\u0234")
-        buf.write("\u0229\3\2\2\2\u0234\u022f\3\2\2\2\u0235\u024b\3\2\2\2")
-        buf.write("\u0236\u0238\7\21\2\2\u0237\u0236\3\2\2\2\u0237\u0238")
-        buf.write("\3\2\2\2\u0238\u0239\3\2\2\2\u0239\u023a\7\t\2\2\u023a")
-        buf.write("\u023c\5X-\2\u023b\u023d\7\22\2\2\u023c\u023b\3\2\2\2")
-        buf.write("\u023c\u023d\3\2\2\2\u023d\u023e\3\2\2\2\u023e\u023f\7")
-        buf.write("\n\2\2\u023f\u024c\3\2\2\2\u0240\u0242\7\23\2\2\u0241")
-        buf.write("\u0240\3\2\2\2\u0241\u0242\3\2\2\2\u0242\u0243\3\2\2\2")
-        buf.write("\u0243\u0244\7\t\2\2\u0244\u0246\5X-\2\u0245\u0247\7\24")
-        buf.write("\2\2\u0246\u0245\3\2\2\2\u0246\u0247\3\2\2\2\u0247\u0248")
-        buf.write("\3\2\2\2\u0248\u0249\7\n\2\2\u0249\u024c\3\2\2\2\u024a")
-        buf.write("\u024c\5Z.\2\u024b\u0237\3\2\2\2\u024b\u0241\3\2\2\2\u024b")
-        buf.write("\u024a\3\2\2\2\u024c\u02b1\3\2\2\2\u024d\u025a\5P)\2\u024e")
-        buf.write("\u0250\5`\61\2\u024f\u024e\3\2\2\2\u024f\u0250\3\2\2\2")
-        buf.write("\u0250\u0252\3\2\2\2\u0251\u0253\5b\62\2\u0252\u0251\3")
-        buf.write("\2\2\2\u0252\u0253\3\2\2\2\u0253\u025b\3\2\2\2\u0254\u0256")
-        buf.write("\5b\62\2\u0255\u0254\3\2\2\2\u0255\u0256\3\2\2\2\u0256")
-        buf.write("\u0258\3\2\2\2\u0257\u0259\5`\61\2\u0258\u0257\3\2\2\2")
-        buf.write("\u0258\u0259\3\2\2\2\u0259\u025b\3\2\2\2\u025a\u024f\3")
-        buf.write("\2\2\2\u025a\u0255\3\2\2\2\u025b\u0271\3\2\2\2\u025c\u025e")
-        buf.write("\7\21\2\2\u025d\u025c\3\2\2\2\u025d\u025e\3\2\2\2\u025e")
-        buf.write("\u025f\3\2\2\2\u025f\u0260\7\t\2\2\u0260\u0262\5\\/\2")
-        buf.write("\u0261\u0263\7\22\2\2\u0262\u0261\3\2\2\2\u0262\u0263")
-        buf.write("\3\2\2\2\u0263\u0264\3\2\2\2\u0264\u0265\7\n\2\2\u0265")
-        buf.write("\u0272\3\2\2\2\u0266\u0268\7\23\2\2\u0267\u0266\3\2\2")
-        buf.write("\2\u0267\u0268\3\2\2\2\u0268\u0269\3\2\2\2\u0269\u026a")
-        buf.write("\7\t\2\2\u026a\u026c\5\\/\2\u026b\u026d\7\24\2\2\u026c")
-        buf.write("\u026b\3\2\2\2\u026c\u026d\3\2\2\2\u026d\u026e\3\2\2\2")
-        buf.write("\u026e\u026f\7\n\2\2\u026f\u0272\3\2\2\2\u0270\u0272\5")
-        buf.write("^\60\2\u0271\u025d\3\2\2\2\u0271\u0267\3\2\2\2\u0271\u0270")
-        buf.write("\3\2\2\2\u0272\u02b1\3\2\2\2\u0273\u0288\7\34\2\2\u0274")
-        buf.write("\u0275\5`\61\2\u0275\u0276\5b\62\2\u0276\u0289\3\2\2\2")
-        buf.write("\u0277\u0278\5b\62\2\u0278\u0279\5`\61\2\u0279\u0289\3")
-        buf.write("\2\2\2\u027a\u027b\7[\2\2\u027b\u027c\7\13\2\2\u027c\u027d")
-        buf.write("\7\f\2\2\u027d\u027e\3\2\2\2\u027e\u027f\7\\\2\2\u027f")
-        buf.write("\u0280\7\13\2\2\u0280\u0289\7\f\2\2\u0281\u0282\7\\\2")
-        buf.write("\2\u0282\u0283\7\13\2\2\u0283\u0284\7\f\2\2\u0284\u0285")
-        buf.write("\3\2\2\2\u0285\u0286\7[\2\2\u0286\u0287\7\13\2\2\u0287")
-        buf.write("\u0289\7\f\2\2\u0288\u0274\3\2\2\2\u0288\u0277\3\2\2\2")
-        buf.write("\u0288\u027a\3\2\2\2\u0288\u0281\3\2\2\2\u0288\u0289\3")
-        buf.write("\2\2\2\u0289\u0290\3\2\2\2\u028a\u028c\5\24\13\2\u028b")
-        buf.write("\u028a\3\2\2\2\u028b\u028c\3\2\2\2\u028c\u028d\3\2\2\2")
-        buf.write("\u028d\u0291\7a\2\2\u028e\u0291\5B\"\2\u028f\u0291\5\24")
-        buf.write("\13\2\u0290\u028b\3\2\2\2\u0290\u028e\3\2\2\2\u0290\u028f")
-        buf.write("\3\2\2\2\u0291\u02b1\3\2\2\2\u0292\u0297\7A\2\2\u0293")
-        buf.write("\u0294\7\17\2\2\u0294\u0295\5\22\n\2\u0295\u0296\7\20")
-        buf.write("\2\2\u0296\u0298\3\2\2\2\u0297\u0293\3\2\2\2\u0297\u0298")
-        buf.write("\3\2\2\2\u0298\u0299\3\2\2\2\u0299\u029a\7\13\2\2\u029a")
-        buf.write("\u029b\5\22\n\2\u029b\u029c\7\f\2\2\u029c\u02b1\3\2\2")
-        buf.write("\2\u029d\u02a4\t\f\2\2\u029e\u029f\5d\63\2\u029f\u02a0")
-        buf.write("\5b\62\2\u02a0\u02a5\3\2\2\2\u02a1\u02a2\5b\62\2\u02a2")
-        buf.write("\u02a3\5d\63\2\u02a3\u02a5\3\2\2\2\u02a4\u029e\3\2\2\2")
-        buf.write("\u02a4\u02a1\3\2\2\2\u02a5\u02a6\3\2\2\2\u02a6\u02a7\5")
-        buf.write("\26\f\2\u02a7\u02b1\3\2\2\2\u02a8\u02a9\7\32\2\2\u02a9")
-        buf.write("\u02aa\5V,\2\u02aa\u02ab\5\26\f\2\u02ab\u02b1\3\2\2\2")
-        buf.write("\u02ac\u02ae\7b\2\2\u02ad\u02af\5b\62\2\u02ae\u02ad\3")
-        buf.write("\2\2\2\u02ae\u02af\3\2\2\2\u02af\u02b1\3\2\2\2\u02b0\u0227")
-        buf.write("\3\2\2\2\u02b0\u024d\3\2\2\2\u02b0\u0273\3\2\2\2\u02b0")
-        buf.write("\u0292\3\2\2\2\u02b0\u029d\3\2\2\2\u02b0\u02a8\3\2\2\2")
-        buf.write("\u02b0\u02ac\3\2\2\2\u02b1S\3\2\2\2\u02b2\u02b3\5\22\n")
-        buf.write("\2\u02b3\u02b4\7_\2\2\u02b4\u02b5\5T+\2\u02b5\u02b8\3")
-        buf.write("\2\2\2\u02b6\u02b8\5\22\n\2\u02b7\u02b2\3\2\2\2\u02b7")
-        buf.write("\u02b6\3\2\2\2\u02b8U\3\2\2\2\u02b9\u02ba\7[\2\2\u02ba")
-        buf.write("\u02bb\7\13\2\2\u02bb\u02bc\t\r\2\2\u02bc\u02bd\7\33\2")
-        buf.write("\2\u02bd\u02c2\5\22\n\2\u02be\u02bf\7\\\2\2\u02bf\u02c0")
-        buf.write("\7\13\2\2\u02c0\u02c1\t\4\2\2\u02c1\u02c3\7\f\2\2\u02c2")
-        buf.write("\u02be\3\2\2\2\u02c2\u02c3\3\2\2\2\u02c3\u02c4\3\2\2\2")
-        buf.write("\u02c4\u02c5\7\f\2\2\u02c5W\3\2\2\2\u02c6\u02c7\5\22\n")
-        buf.write("\2\u02c7Y\3\2\2\2\u02c8\u02c9\5\30\r\2\u02c9[\3\2\2\2")
-        buf.write("\u02ca\u02d0\5\22\n\2\u02cb\u02cc\5\22\n\2\u02cc\u02cd")
-        buf.write("\7_\2\2\u02cd\u02ce\5\\/\2\u02ce\u02d0\3\2\2\2\u02cf\u02ca")
-        buf.write("\3\2\2\2\u02cf\u02cb\3\2\2\2\u02d0]\3\2\2\2\u02d1\u02d2")
-        buf.write("\5\30\r\2\u02d2_\3\2\2\2\u02d3\u02d9\7[\2\2\u02d4\u02da")
-        buf.write("\5<\37\2\u02d5\u02d6\7\13\2\2\u02d6\u02d7\5\22\n\2\u02d7")
-        buf.write("\u02d8\7\f\2\2\u02d8\u02da\3\2\2\2\u02d9\u02d4\3\2\2\2")
-        buf.write("\u02d9\u02d5\3\2\2\2\u02daa\3\2\2\2\u02db\u02e1\7\\\2")
-        buf.write("\2\u02dc\u02e2\5<\37\2\u02dd\u02de\7\13\2\2\u02de\u02df")
-        buf.write("\5\22\n\2\u02df\u02e0\7\f\2\2\u02e0\u02e2\3\2\2\2\u02e1")
-        buf.write("\u02dc\3\2\2\2\u02e1\u02dd\3\2\2\2\u02e2c\3\2\2\2\u02e3")
-        buf.write("\u02e4\7[\2\2\u02e4\u02e5\7\13\2\2\u02e5\u02e6\5\20\t")
-        buf.write("\2\u02e6\u02e7\7\f\2\2\u02e7e\3\2\2\2\u02e8\u02e9\7[\2")
-        buf.write("\2\u02e9\u02ea\7\13\2\2\u02ea\u02eb\5\20\t\2\u02eb\u02ec")
-        buf.write("\7\f\2\2\u02ecg\3\2\2\2Ilt~\u0089\u00b1\u00ba\u00c4\u00c7")
+        buf.write("\u01ea\u01eb\3\2\2\2\u01eb\u01fd\3\2\2\2\u01ec\u01fd\7")
+        buf.write("r\2\2\u01ed\u01fd\7e\2\2\u01ee\u01fd\7p\2\2\u01ef\u01fd")
+        buf.write("\7f\2\2\u01f0\u01fd\7a\2\2\u01f1\u01fd\5> \2\u01f2\u01fd")
+        buf.write("\7s\2\2\u01f3\u01fd\7t\2\2\u01f4\u01fd\7{\2\2\u01f5\u01fd")
+        buf.write("\7|\2\2\u01f6\u01fd\7w\2\2\u01f7\u01fd\7x\2\2\u01f8\u01fd")
+        buf.write("\7v\2\2\u01f9\u01fd\7u\2\2\u01fa\u01fd\7y\2\2\u01fb\u01fd")
+        buf.write("\7z\2\2\u01fc\u01e7\3\2\2\2\u01fc\u01ec\3\2\2\2\u01fc")
+        buf.write("\u01ed\3\2\2\2\u01fc\u01ee\3\2\2\2\u01fc\u01ef\3\2\2\2")
+        buf.write("\u01fc\u01f0\3\2\2\2\u01fc\u01f1\3\2\2\2\u01fc\u01f2\3")
+        buf.write("\2\2\2\u01fc\u01f3\3\2\2\2\u01fc\u01f4\3\2\2\2\u01fc\u01f5")
+        buf.write("\3\2\2\2\u01fc\u01f6\3\2\2\2\u01fc\u01f7\3\2\2\2\u01fc")
+        buf.write("\u01f8\3\2\2\2\u01fc\u01f9\3\2\2\2\u01fc\u01fa\3\2\2\2")
+        buf.write("\u01fc\u01fb\3\2\2\2\u01fd=\3\2\2\2\u01fe\u01ff\7O\2\2")
+        buf.write("\u01ff\u0200\7\13\2\2\u0200\u0201\5@!\2\u0201\u0202\7")
+        buf.write("\f\2\2\u0202?\3\2\2\2\u0203\u0205\t\6\2\2\u0204\u0203")
+        buf.write("\3\2\2\2\u0205\u0206\3\2\2\2\u0206\u0204\3\2\2\2\u0206")
+        buf.write("\u0207\3\2\2\2\u0207A\3\2\2\2\u0208\u0209\7K\2\2\u0209")
+        buf.write("\u020a\7\13\2\2\u020a\u020b\5\22\n\2\u020b\u020c\7\f\2")
+        buf.write("\2\u020c\u020d\7\13\2\2\u020d\u020e\5\22\n\2\u020e\u020f")
+        buf.write("\7\f\2\2\u020fC\3\2\2\2\u0210\u0211\t\7\2\2\u0211\u0212")
+        buf.write("\7\13\2\2\u0212\u0213\5\22\n\2\u0213\u0214\7\f\2\2\u0214")
+        buf.write("\u0215\7\13\2\2\u0215\u0216\5\22\n\2\u0216\u0217\7\f\2")
+        buf.write("\2\u0217E\3\2\2\2\u0218\u0219\t\b\2\2\u0219G\3\2\2\2\u021a")
+        buf.write("\u021b\t\t\2\2\u021bI\3\2\2\2\u021c\u021d\t\n\2\2\u021d")
+        buf.write("K\3\2\2\2\u021e\u021f\t\13\2\2\u021fM\3\2\2\2\u0220\u0227")
+        buf.write("\5F$\2\u0221\u0222\7P\2\2\u0222\u0223\7\13\2\2\u0223\u0224")
+        buf.write("\5J&\2\u0224\u0225\7\f\2\2\u0225\u0227\3\2\2\2\u0226\u0220")
+        buf.write("\3\2\2\2\u0226\u0221\3\2\2\2\u0227O\3\2\2\2\u0228\u022f")
+        buf.write("\5H%\2\u0229\u022a\7P\2\2\u022a\u022b\7\13\2\2\u022b\u022c")
+        buf.write("\5L\'\2\u022c\u022d\7\f\2\2\u022d\u022f\3\2\2\2\u022e")
+        buf.write("\u0228\3\2\2\2\u022e\u0229\3\2\2\2\u022fQ\3\2\2\2\u0230")
+        buf.write("\u023d\5N(\2\u0231\u0233\5`\61\2\u0232\u0231\3\2\2\2\u0232")
+        buf.write("\u0233\3\2\2\2\u0233\u0235\3\2\2\2\u0234\u0236\5b\62\2")
+        buf.write("\u0235\u0234\3\2\2\2\u0235\u0236\3\2\2\2\u0236\u023e\3")
+        buf.write("\2\2\2\u0237\u0239\5b\62\2\u0238\u0237\3\2\2\2\u0238\u0239")
+        buf.write("\3\2\2\2\u0239\u023b\3\2\2\2\u023a\u023c\5`\61\2\u023b")
+        buf.write("\u023a\3\2\2\2\u023b\u023c\3\2\2\2\u023c\u023e\3\2\2\2")
+        buf.write("\u023d\u0232\3\2\2\2\u023d\u0238\3\2\2\2\u023e\u0254\3")
+        buf.write("\2\2\2\u023f\u0241\7\21\2\2\u0240\u023f\3\2\2\2\u0240")
+        buf.write("\u0241\3\2\2\2\u0241\u0242\3\2\2\2\u0242\u0243\7\t\2\2")
+        buf.write("\u0243\u0245\5X-\2\u0244\u0246\7\22\2\2\u0245\u0244\3")
+        buf.write("\2\2\2\u0245\u0246\3\2\2\2\u0246\u0247\3\2\2\2\u0247\u0248")
+        buf.write("\7\n\2\2\u0248\u0255\3\2\2\2\u0249\u024b\7\23\2\2\u024a")
+        buf.write("\u0249\3\2\2\2\u024a\u024b\3\2\2\2\u024b\u024c\3\2\2\2")
+        buf.write("\u024c\u024d\7\t\2\2\u024d\u024f\5X-\2\u024e\u0250\7\24")
+        buf.write("\2\2\u024f\u024e\3\2\2\2\u024f\u0250\3\2\2\2\u0250\u0251")
+        buf.write("\3\2\2\2\u0251\u0252\7\n\2\2\u0252\u0255\3\2\2\2\u0253")
+        buf.write("\u0255\5Z.\2\u0254\u0240\3\2\2\2\u0254\u024a\3\2\2\2\u0254")
+        buf.write("\u0253\3\2\2\2\u0255\u02ba\3\2\2\2\u0256\u0263\5P)\2\u0257")
+        buf.write("\u0259\5`\61\2\u0258\u0257\3\2\2\2\u0258\u0259\3\2\2\2")
+        buf.write("\u0259\u025b\3\2\2\2\u025a\u025c\5b\62\2\u025b\u025a\3")
+        buf.write("\2\2\2\u025b\u025c\3\2\2\2\u025c\u0264\3\2\2\2\u025d\u025f")
+        buf.write("\5b\62\2\u025e\u025d\3\2\2\2\u025e\u025f\3\2\2\2\u025f")
+        buf.write("\u0261\3\2\2\2\u0260\u0262\5`\61\2\u0261\u0260\3\2\2\2")
+        buf.write("\u0261\u0262\3\2\2\2\u0262\u0264\3\2\2\2\u0263\u0258\3")
+        buf.write("\2\2\2\u0263\u025e\3\2\2\2\u0264\u027a\3\2\2\2\u0265\u0267")
+        buf.write("\7\21\2\2\u0266\u0265\3\2\2\2\u0266\u0267\3\2\2\2\u0267")
+        buf.write("\u0268\3\2\2\2\u0268\u0269\7\t\2\2\u0269\u026b\5\\/\2")
+        buf.write("\u026a\u026c\7\22\2\2\u026b\u026a\3\2\2\2\u026b\u026c")
+        buf.write("\3\2\2\2\u026c\u026d\3\2\2\2\u026d\u026e\7\n\2\2\u026e")
+        buf.write("\u027b\3\2\2\2\u026f\u0271\7\23\2\2\u0270\u026f\3\2\2")
+        buf.write("\2\u0270\u0271\3\2\2\2\u0271\u0272\3\2\2\2\u0272\u0273")
+        buf.write("\7\t\2\2\u0273\u0275\5\\/\2\u0274\u0276\7\24\2\2\u0275")
+        buf.write("\u0274\3\2\2\2\u0275\u0276\3\2\2\2\u0276\u0277\3\2\2\2")
+        buf.write("\u0277\u0278\7\n\2\2\u0278\u027b\3\2\2\2\u0279\u027b\5")
+        buf.write("^\60\2\u027a\u0266\3\2\2\2\u027a\u0270\3\2\2\2\u027a\u0279")
+        buf.write("\3\2\2\2\u027b\u02ba\3\2\2\2\u027c\u0291\7\34\2\2\u027d")
+        buf.write("\u027e\5`\61\2\u027e\u027f\5b\62\2\u027f\u0292\3\2\2\2")
+        buf.write("\u0280\u0281\5b\62\2\u0281\u0282\5`\61\2\u0282\u0292\3")
+        buf.write("\2\2\2\u0283\u0284\7[\2\2\u0284\u0285\7\13\2\2\u0285\u0286")
+        buf.write("\7\f\2\2\u0286\u0287\3\2\2\2\u0287\u0288\7\\\2\2\u0288")
+        buf.write("\u0289\7\13\2\2\u0289\u0292\7\f\2\2\u028a\u028b\7\\\2")
+        buf.write("\2\u028b\u028c\7\13\2\2\u028c\u028d\7\f\2\2\u028d\u028e")
+        buf.write("\3\2\2\2\u028e\u028f\7[\2\2\u028f\u0290\7\13\2\2\u0290")
+        buf.write("\u0292\7\f\2\2\u0291\u027d\3\2\2\2\u0291\u0280\3\2\2\2")
+        buf.write("\u0291\u0283\3\2\2\2\u0291\u028a\3\2\2\2\u0291\u0292\3")
+        buf.write("\2\2\2\u0292\u0299\3\2\2\2\u0293\u0295\5\24\13\2\u0294")
+        buf.write("\u0293\3\2\2\2\u0294\u0295\3\2\2\2\u0295\u0296\3\2\2\2")
+        buf.write("\u0296\u029a\7a\2\2\u0297\u029a\5B\"\2\u0298\u029a\5\24")
+        buf.write("\13\2\u0299\u0294\3\2\2\2\u0299\u0297\3\2\2\2\u0299\u0298")
+        buf.write("\3\2\2\2\u029a\u02ba\3\2\2\2\u029b\u02a0\7A\2\2\u029c")
+        buf.write("\u029d\7\17\2\2\u029d\u029e\5\22\n\2\u029e\u029f\7\20")
+        buf.write("\2\2\u029f\u02a1\3\2\2\2\u02a0\u029c\3\2\2\2\u02a0\u02a1")
+        buf.write("\3\2\2\2\u02a1\u02a2\3\2\2\2\u02a2\u02a3\7\13\2\2\u02a3")
+        buf.write("\u02a4\5\22\n\2\u02a4\u02a5\7\f\2\2\u02a5\u02ba\3\2\2")
+        buf.write("\2\u02a6\u02ad\t\f\2\2\u02a7\u02a8\5d\63\2\u02a8\u02a9")
+        buf.write("\5b\62\2\u02a9\u02ae\3\2\2\2\u02aa\u02ab\5b\62\2\u02ab")
+        buf.write("\u02ac\5d\63\2\u02ac\u02ae\3\2\2\2\u02ad\u02a7\3\2\2\2")
+        buf.write("\u02ad\u02aa\3\2\2\2\u02ae\u02af\3\2\2\2\u02af\u02b0\5")
+        buf.write("\26\f\2\u02b0\u02ba\3\2\2\2\u02b1\u02b2\7\32\2\2\u02b2")
+        buf.write("\u02b3\5V,\2\u02b3\u02b4\5\26\f\2\u02b4\u02ba\3\2\2\2")
+        buf.write("\u02b5\u02b7\7b\2\2\u02b6\u02b8\5b\62\2\u02b7\u02b6\3")
+        buf.write("\2\2\2\u02b7\u02b8\3\2\2\2\u02b8\u02ba\3\2\2\2\u02b9\u0230")
+        buf.write("\3\2\2\2\u02b9\u0256\3\2\2\2\u02b9\u027c\3\2\2\2\u02b9")
+        buf.write("\u029b\3\2\2\2\u02b9\u02a6\3\2\2\2\u02b9\u02b1\3\2\2\2")
+        buf.write("\u02b9\u02b5\3\2\2\2\u02baS\3\2\2\2\u02bb\u02bc\5\22\n")
+        buf.write("\2\u02bc\u02bd\7_\2\2\u02bd\u02be\5T+\2\u02be\u02c1\3")
+        buf.write("\2\2\2\u02bf\u02c1\5\22\n\2\u02c0\u02bb\3\2\2\2\u02c0")
+        buf.write("\u02bf\3\2\2\2\u02c1U\3\2\2\2\u02c2\u02c3\7[\2\2\u02c3")
+        buf.write("\u02c4\7\13\2\2\u02c4\u02c5\t\r\2\2\u02c5\u02c6\7\33\2")
+        buf.write("\2\u02c6\u02cb\5\22\n\2\u02c7\u02c8\7\\\2\2\u02c8\u02c9")
+        buf.write("\7\13\2\2\u02c9\u02ca\t\4\2\2\u02ca\u02cc\7\f\2\2\u02cb")
+        buf.write("\u02c7\3\2\2\2\u02cb\u02cc\3\2\2\2\u02cc\u02cd\3\2\2\2")
+        buf.write("\u02cd\u02ce\7\f\2\2\u02ceW\3\2\2\2\u02cf\u02d0\5\22\n")
+        buf.write("\2\u02d0Y\3\2\2\2\u02d1\u02d2\5\30\r\2\u02d2[\3\2\2\2")
+        buf.write("\u02d3\u02d9\5\22\n\2\u02d4\u02d5\5\22\n\2\u02d5\u02d6")
+        buf.write("\7_\2\2\u02d6\u02d7\5\\/\2\u02d7\u02d9\3\2\2\2\u02d8\u02d3")
+        buf.write("\3\2\2\2\u02d8\u02d4\3\2\2\2\u02d9]\3\2\2\2\u02da\u02db")
+        buf.write("\5\30\r\2\u02db_\3\2\2\2\u02dc\u02e2\7[\2\2\u02dd\u02e3")
+        buf.write("\5<\37\2\u02de\u02df\7\13\2\2\u02df\u02e0\5\22\n\2\u02e0")
+        buf.write("\u02e1\7\f\2\2\u02e1\u02e3\3\2\2\2\u02e2\u02dd\3\2\2\2")
+        buf.write("\u02e2\u02de\3\2\2\2\u02e3a\3\2\2\2\u02e4\u02ea\7\\\2")
+        buf.write("\2\u02e5\u02eb\5<\37\2\u02e6\u02e7\7\13\2\2\u02e7\u02e8")
+        buf.write("\5\22\n\2\u02e8\u02e9\7\f\2\2\u02e9\u02eb\3\2\2\2\u02ea")
+        buf.write("\u02e5\3\2\2\2\u02ea\u02e6\3\2\2\2\u02ebc\3\2\2\2\u02ec")
+        buf.write("\u02ed\7[\2\2\u02ed\u02ee\7\13\2\2\u02ee\u02ef\5\20\t")
+        buf.write("\2\u02ef\u02f0\7\f\2\2\u02f0e\3\2\2\2\u02f1\u02f2\7[\2")
+        buf.write("\2\u02f2\u02f3\7\13\2\2\u02f3\u02f4\5\20\t\2\u02f4\u02f5")
+        buf.write("\7\f\2\2\u02f5g\3\2\2\2Ilt~\u0089\u00b1\u00ba\u00c4\u00c7")
         buf.write("\u00d7\u00e2\u00ed\u00f5\u00f7\u00ff\u0102\u0108\u010f")
         buf.write("\u0114\u011c\u0122\u012a\u0138\u013b\u013f\u014c\u014f")
         buf.write("\u0153\u015f\u0169\u01a7\u01b9\u01cb\u01dd\u01e7\u01ea")
-        buf.write("\u01f3\u01fd\u021d\u0225\u0229\u022c\u022f\u0232\u0234")
-        buf.write("\u0237\u023c\u0241\u0246\u024b\u024f\u0252\u0255\u0258")
-        buf.write("\u025a\u025d\u0262\u0267\u026c\u0271\u0288\u028b\u0290")
-        buf.write("\u0297\u02a4\u02ae\u02b0\u02b7\u02c2\u02cf\u02d9\u02e1")
+        buf.write("\u01fc\u0206\u0226\u022e\u0232\u0235\u0238\u023b\u023d")
+        buf.write("\u0240\u0245\u024a\u024f\u0254\u0258\u025b\u025e\u0261")
+        buf.write("\u0263\u0266\u026b\u0270\u0275\u027a\u0291\u0294\u0299")
+        buf.write("\u02a0\u02ad\u02b7\u02b9\u02c0\u02cb\u02d8\u02e2\u02ea")
         return buf.getvalue()
 
 
@@ -412,8 +415,9 @@ class PSParser ( Parser ):
                      "<INVALID>", "<INVALID>", "<INVALID>", "'&'", "'\\\\'", 
                      "'\\overline'", "'\\bar'", "'_'", "'^'", "':'", "';'", 
                      "','", "'.'", "<INVALID>", "<INVALID>", "'E'", "<INVALID>", 
-                     "<INVALID>", "<INVALID>", "'='", "'<'", "<INVALID>", 
-                     "'>'", "<INVALID>", "<INVALID>", "'!'" ]
+                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                     "'\\leq'", "<INVALID>", "'\\geq'", "<INVALID>", "'\\and'", 
+                     "'\\or'", "'!'" ]
 
     symbolicNames = [ "<INVALID>", "WS", "DOLLAR_SIGN", "ADD", "SUB", "MUL", 
                       "DIV", "L_PAREN", "R_PAREN", "L_BRACE", "R_BRACE", 
@@ -440,8 +444,10 @@ class PSParser ( Parser ):
                       "UNDERSCORE", "CARET", "COLON", "SEMICOLON", "COMMA", 
                       "PERIOD", "DIFFERENTIAL", "EXP_E", "E_NOTATION_E", 
                       "LETTER_NO_E", "NUMBER", "E_NOTATION", "EQUAL", "LT", 
-                      "LTE", "GT", "GTE", "UNEQUAL", "BANG", "PERCENT_NUMBER", 
-                      "GREEK_LETTER", "SYMBOL", "VARIABLE" ]
+                      "LTE", "GT", "GTE", "UNEQUAL", "AND", "OR", "BANG", 
+                      "PERCENT_NUMBER", "GREEK_LETTER", "SYMBOL", "VARIABLE", 
+                      "UNION", "SUBSET", "SUPERSET", "INTERSECTION", "PROPER_SUBSET", 
+                      "INTERVAL", "ABSOLUTE", "EPSILON", "EQUALITY_CMD" ]
 
     RULE_accent_symbol = 0
     RULE_math = 1
@@ -616,18 +622,28 @@ class PSParser ( Parser ):
     GT=104
     GTE=105
     UNEQUAL=106
-    BANG=107
-    PERCENT_NUMBER=108
-    GREEK_LETTER=109
-    SYMBOL=110
-    VARIABLE=111
+    AND=107
+    OR=108
+    BANG=109
+    PERCENT_NUMBER=110
+    GREEK_LETTER=111
+    SYMBOL=112
+    VARIABLE=113
+    UNION=114
+    SUBSET=115
+    SUPERSET=116
+    INTERSECTION=117
+    PROPER_SUBSET=118
+    INTERVAL=119
+    ABSOLUTE=120
+    EPSILON=121
+    EQUALITY_CMD=122
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.8")
+        self.checkVersion("4.7.2")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
-
 
 
 
@@ -654,6 +670,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitAccent_symbol" ):
                 listener.exitAccent_symbol(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAccent_symbol" ):
+                return visitor.visitAccent_symbol(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -679,7 +701,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class MathContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -704,6 +725,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitMath" ):
                 listener.exitMath(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMath" ):
+                return visitor.visitMath(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -736,7 +763,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class MatrixContext(ParserRuleContext):
 
@@ -774,6 +800,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitMatrix" ):
                 listener.exitMatrix(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMatrix" ):
+                return visitor.visitMatrix(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -810,7 +842,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Matrix_rowContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -840,6 +871,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitMatrix_row" ):
                 listener.exitMatrix_row(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMatrix_row" ):
+                return visitor.visitMatrix_row(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -872,7 +909,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class RelationContext(ParserRuleContext):
 
@@ -919,6 +955,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRelation" ):
                 listener.exitRelation(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRelation" ):
+                return visitor.visitRelation(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -970,7 +1012,6 @@ class PSParser ( Parser ):
             self.unrollRecursionContexts(_parentctx)
         return localctx
 
-
     class Relation_listContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1021,6 +1062,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRelation_list" ):
                 listener.exitRelation_list(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRelation_list" ):
+                return visitor.visitRelation_list(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1134,7 +1181,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Relation_list_contentContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1170,6 +1216,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitRelation_list_content" ):
                 listener.exitRelation_list_content(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRelation_list_content" ):
+                return visitor.visitRelation_list_content(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1236,7 +1288,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class EqualityContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1264,6 +1315,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitEquality" ):
                 listener.exitEquality(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEquality" ):
+                return visitor.visitEquality(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1287,7 +1344,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class ExprContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1309,6 +1365,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitExpr" ):
                 listener.exitExpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr" ):
+                return visitor.visitExpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1327,7 +1389,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class AdditiveContext(ParserRuleContext):
 
@@ -1362,6 +1423,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAdditive" ):
                 listener.exitAdditive(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAdditive" ):
+                return visitor.visitAdditive(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1413,7 +1480,6 @@ class PSParser ( Parser ):
             self.unrollRecursionContexts(_parentctx)
         return localctx
 
-
     class MpContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1462,6 +1528,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitMp" ):
                 listener.exitMp(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMp" ):
+                return visitor.visitMp(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1513,7 +1585,6 @@ class PSParser ( Parser ):
             self.unrollRecursionContexts(_parentctx)
         return localctx
 
-
     class Mp_nofuncContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1562,6 +1633,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitMp_nofunc" ):
                 listener.exitMp_nofunc(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMp_nofunc" ):
+                return visitor.visitMp_nofunc(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1613,7 +1690,6 @@ class PSParser ( Parser ):
             self.unrollRecursionContexts(_parentctx)
         return localctx
 
-
     class UnaryContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1648,6 +1724,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitUnary" ):
                 listener.exitUnary(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnary" ):
+                return visitor.visitUnary(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1672,7 +1754,7 @@ class PSParser ( Parser ):
                 self.state = 239
                 self.unary()
                 pass
-            elif token in [PSParser.L_PAREN, PSParser.L_BRACE, PSParser.L_BRACKET, PSParser.L_LEFT, PSParser.ML_LEFT, PSParser.BAR, PSParser.L_FLOOR, PSParser.L_CEIL, PSParser.FUNC_LIM, PSParser.FUNC_INT, PSParser.FUNC_SUM, PSParser.FUNC_PROD, PSParser.FUNC_LOG, PSParser.FUNC_LN, PSParser.FUNC_EXP, PSParser.FUNC_SIN, PSParser.FUNC_COS, PSParser.FUNC_TAN, PSParser.FUNC_CSC, PSParser.FUNC_SEC, PSParser.FUNC_COT, PSParser.FUNC_ARCSIN, PSParser.FUNC_ARCCOS, PSParser.FUNC_ARCTAN, PSParser.FUNC_ARCCSC, PSParser.FUNC_ARCSEC, PSParser.FUNC_ARCCOT, PSParser.FUNC_SINH, PSParser.FUNC_COSH, PSParser.FUNC_TANH, PSParser.FUNC_ARSINH, PSParser.FUNC_ARCOSH, PSParser.FUNC_ARTANH, PSParser.FUNC_ARCSINH, PSParser.FUNC_ARCCOSH, PSParser.FUNC_ARCTANH, PSParser.FUNC_SQRT, PSParser.FUNC_GCD, PSParser.FUNC_LCM, PSParser.FUNC_FLOOR, PSParser.FUNC_CEIL, PSParser.FUNC_MAX, PSParser.FUNC_MIN, PSParser.CMD_FRAC, PSParser.CMD_BINOM, PSParser.CMD_CHOOSE, PSParser.CMD_MATHIT, PSParser.CMD_OPERATORNAME, PSParser.CMD_MATRIX_START, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.EXP_E, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE]:
+            elif token in [PSParser.L_PAREN, PSParser.L_BRACE, PSParser.L_BRACKET, PSParser.L_LEFT, PSParser.ML_LEFT, PSParser.BAR, PSParser.L_FLOOR, PSParser.L_CEIL, PSParser.FUNC_LIM, PSParser.FUNC_INT, PSParser.FUNC_SUM, PSParser.FUNC_PROD, PSParser.FUNC_LOG, PSParser.FUNC_LN, PSParser.FUNC_EXP, PSParser.FUNC_SIN, PSParser.FUNC_COS, PSParser.FUNC_TAN, PSParser.FUNC_CSC, PSParser.FUNC_SEC, PSParser.FUNC_COT, PSParser.FUNC_ARCSIN, PSParser.FUNC_ARCCOS, PSParser.FUNC_ARCTAN, PSParser.FUNC_ARCCSC, PSParser.FUNC_ARCSEC, PSParser.FUNC_ARCCOT, PSParser.FUNC_SINH, PSParser.FUNC_COSH, PSParser.FUNC_TANH, PSParser.FUNC_ARSINH, PSParser.FUNC_ARCOSH, PSParser.FUNC_ARTANH, PSParser.FUNC_ARCSINH, PSParser.FUNC_ARCCOSH, PSParser.FUNC_ARCTANH, PSParser.FUNC_SQRT, PSParser.FUNC_GCD, PSParser.FUNC_LCM, PSParser.FUNC_FLOOR, PSParser.FUNC_CEIL, PSParser.FUNC_MAX, PSParser.FUNC_MIN, PSParser.CMD_FRAC, PSParser.CMD_BINOM, PSParser.CMD_CHOOSE, PSParser.CMD_MATHIT, PSParser.CMD_OPERATORNAME, PSParser.CMD_MATRIX_START, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.EXP_E, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.UNION, PSParser.SUBSET, PSParser.SUPERSET, PSParser.INTERSECTION, PSParser.PROPER_SUBSET, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.EPSILON, PSParser.EQUALITY_CMD]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 241 
                 self._errHandler.sync(self)
@@ -1699,7 +1781,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class Unary_nofuncContext(ParserRuleContext):
 
@@ -1739,6 +1820,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitUnary_nofunc" ):
                 listener.exitUnary_nofunc(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitUnary_nofunc" ):
+                return visitor.visitUnary_nofunc(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -1763,7 +1850,7 @@ class PSParser ( Parser ):
                 self.state = 248
                 self.unary_nofunc()
                 pass
-            elif token in [PSParser.L_PAREN, PSParser.L_BRACE, PSParser.L_BRACKET, PSParser.L_LEFT, PSParser.ML_LEFT, PSParser.BAR, PSParser.L_FLOOR, PSParser.L_CEIL, PSParser.FUNC_LIM, PSParser.FUNC_INT, PSParser.FUNC_SUM, PSParser.FUNC_PROD, PSParser.FUNC_LOG, PSParser.FUNC_LN, PSParser.FUNC_EXP, PSParser.FUNC_SIN, PSParser.FUNC_COS, PSParser.FUNC_TAN, PSParser.FUNC_CSC, PSParser.FUNC_SEC, PSParser.FUNC_COT, PSParser.FUNC_ARCSIN, PSParser.FUNC_ARCCOS, PSParser.FUNC_ARCTAN, PSParser.FUNC_ARCCSC, PSParser.FUNC_ARCSEC, PSParser.FUNC_ARCCOT, PSParser.FUNC_SINH, PSParser.FUNC_COSH, PSParser.FUNC_TANH, PSParser.FUNC_ARSINH, PSParser.FUNC_ARCOSH, PSParser.FUNC_ARTANH, PSParser.FUNC_ARCSINH, PSParser.FUNC_ARCCOSH, PSParser.FUNC_ARCTANH, PSParser.FUNC_SQRT, PSParser.FUNC_GCD, PSParser.FUNC_LCM, PSParser.FUNC_FLOOR, PSParser.FUNC_CEIL, PSParser.FUNC_MAX, PSParser.FUNC_MIN, PSParser.CMD_FRAC, PSParser.CMD_BINOM, PSParser.CMD_CHOOSE, PSParser.CMD_MATHIT, PSParser.CMD_OPERATORNAME, PSParser.CMD_MATRIX_START, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.EXP_E, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE]:
+            elif token in [PSParser.L_PAREN, PSParser.L_BRACE, PSParser.L_BRACKET, PSParser.L_LEFT, PSParser.ML_LEFT, PSParser.BAR, PSParser.L_FLOOR, PSParser.L_CEIL, PSParser.FUNC_LIM, PSParser.FUNC_INT, PSParser.FUNC_SUM, PSParser.FUNC_PROD, PSParser.FUNC_LOG, PSParser.FUNC_LN, PSParser.FUNC_EXP, PSParser.FUNC_SIN, PSParser.FUNC_COS, PSParser.FUNC_TAN, PSParser.FUNC_CSC, PSParser.FUNC_SEC, PSParser.FUNC_COT, PSParser.FUNC_ARCSIN, PSParser.FUNC_ARCCOS, PSParser.FUNC_ARCTAN, PSParser.FUNC_ARCCSC, PSParser.FUNC_ARCSEC, PSParser.FUNC_ARCCOT, PSParser.FUNC_SINH, PSParser.FUNC_COSH, PSParser.FUNC_TANH, PSParser.FUNC_ARSINH, PSParser.FUNC_ARCOSH, PSParser.FUNC_ARTANH, PSParser.FUNC_ARCSINH, PSParser.FUNC_ARCCOSH, PSParser.FUNC_ARCTANH, PSParser.FUNC_SQRT, PSParser.FUNC_GCD, PSParser.FUNC_LCM, PSParser.FUNC_FLOOR, PSParser.FUNC_CEIL, PSParser.FUNC_MAX, PSParser.FUNC_MIN, PSParser.CMD_FRAC, PSParser.CMD_BINOM, PSParser.CMD_CHOOSE, PSParser.CMD_MATHIT, PSParser.CMD_OPERATORNAME, PSParser.CMD_MATRIX_START, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.EXP_E, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.UNION, PSParser.SUBSET, PSParser.SUPERSET, PSParser.INTERSECTION, PSParser.PROPER_SUBSET, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.EPSILON, PSParser.EQUALITY_CMD]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 249
                 self.postfix()
@@ -1789,7 +1876,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class PostfixContext(ParserRuleContext):
 
@@ -1818,6 +1904,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitPostfix" ):
                 listener.exitPostfix(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPostfix" ):
+                return visitor.visitPostfix(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1849,7 +1941,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Postfix_nofuncContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1877,6 +1968,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitPostfix_nofunc" ):
                 listener.exitPostfix_nofunc(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPostfix_nofunc" ):
+                return visitor.visitPostfix_nofunc(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1908,7 +2005,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Postfix_opContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1932,6 +2028,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitPostfix_op" ):
                 listener.exitPostfix_op(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPostfix_op" ):
+                return visitor.visitPostfix_op(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1965,7 +2067,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Eval_atContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -1993,6 +2094,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitEval_at" ):
                 listener.exitEval_at(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEval_at" ):
+                return visitor.visitEval_at(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2034,7 +2141,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Eval_at_subContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2068,6 +2174,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitEval_at_sub" ):
                 listener.exitEval_at_sub(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEval_at_sub" ):
+                return visitor.visitEval_at_sub(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2106,7 +2218,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Eval_at_supContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2140,6 +2251,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitEval_at_sup" ):
                 listener.exitEval_at_sup(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEval_at_sup" ):
+                return visitor.visitEval_at_sup(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2177,7 +2294,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class ExpContext(ParserRuleContext):
 
@@ -2225,6 +2341,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitExp" ):
                 listener.exitExp(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExp" ):
+                return visitor.visitExp(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
     def exp(self, _p:int=0):
@@ -2258,7 +2380,7 @@ class PSParser ( Parser ):
                     self.state = 310
                     self._errHandler.sync(self)
                     token = self._input.LA(1)
-                    if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE]:
+                    if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.UNION, PSParser.SUBSET, PSParser.SUPERSET, PSParser.INTERSECTION, PSParser.PROPER_SUBSET, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.EPSILON, PSParser.EQUALITY_CMD]:
                         self.state = 305
                         self.atom()
                         pass
@@ -2292,7 +2414,6 @@ class PSParser ( Parser ):
         finally:
             self.unrollRecursionContexts(_parentctx)
         return localctx
-
 
     class Exp_nofuncContext(ParserRuleContext):
 
@@ -2340,6 +2461,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitExp_nofunc" ):
                 listener.exitExp_nofunc(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExp_nofunc" ):
+                return visitor.visitExp_nofunc(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
     def exp_nofunc(self, _p:int=0):
@@ -2373,7 +2500,7 @@ class PSParser ( Parser ):
                     self.state = 330
                     self._errHandler.sync(self)
                     token = self._input.LA(1)
-                    if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE]:
+                    if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.UNION, PSParser.SUBSET, PSParser.SUPERSET, PSParser.INTERSECTION, PSParser.PROPER_SUBSET, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.EPSILON, PSParser.EQUALITY_CMD]:
                         self.state = 325
                         self.atom()
                         pass
@@ -2407,7 +2534,6 @@ class PSParser ( Parser ):
         finally:
             self.unrollRecursionContexts(_parentctx)
         return localctx
-
 
     class CompContext(ParserRuleContext):
 
@@ -2461,6 +2587,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitComp" ):
                 listener.exitComp(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitComp" ):
+                return visitor.visitComp(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2536,7 +2668,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Comp_nofuncContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2585,6 +2716,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitComp_nofunc" ):
                 listener.exitComp_nofunc(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitComp_nofunc" ):
+                return visitor.visitComp_nofunc(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2654,7 +2791,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class GroupContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2711,6 +2847,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitGroup" ):
                 listener.exitGroup(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitGroup" ):
+                return visitor.visitGroup(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2874,7 +3016,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Abs_groupContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -2913,6 +3054,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitAbs_group" ):
                 listener.exitAbs_group(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAbs_group" ):
+                return visitor.visitAbs_group(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2971,7 +3118,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Floor_groupContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -3010,6 +3156,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitFloor_group" ):
                 listener.exitFloor_group(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFloor_group" ):
+                return visitor.visitFloor_group(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3068,7 +3220,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class Ceil_groupContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -3107,6 +3258,12 @@ class PSParser ( Parser ):
         def exitRule(self, listener:ParseTreeListener):
             if hasattr( listener, "exitCeil_group" ):
                 listener.exitCeil_group(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCeil_group" ):
+                return visitor.visitCeil_group(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3165,7 +3322,6 @@ class PSParser ( Parser ):
             self.exitRule()
         return localctx
 
-
     class AccentContext(ParserRuleContext):
 
         def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
@@ -3198,6 +3354,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitAccent" ):
                 listener.exitAccent(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAccent" ):
+                return visitor.visitAccent(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3222,7 +3384,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class AtomContext(ParserRuleContext):
 
@@ -3266,6 +3427,33 @@ class PSParser ( Parser ):
         def VARIABLE(self):
             return self.getToken(PSParser.VARIABLE, 0)
 
+        def UNION(self):
+            return self.getToken(PSParser.UNION, 0)
+
+        def EPSILON(self):
+            return self.getToken(PSParser.EPSILON, 0)
+
+        def EQUALITY_CMD(self):
+            return self.getToken(PSParser.EQUALITY_CMD, 0)
+
+        def INTERSECTION(self):
+            return self.getToken(PSParser.INTERSECTION, 0)
+
+        def PROPER_SUBSET(self):
+            return self.getToken(PSParser.PROPER_SUBSET, 0)
+
+        def SUPERSET(self):
+            return self.getToken(PSParser.SUPERSET, 0)
+
+        def SUBSET(self):
+            return self.getToken(PSParser.SUBSET, 0)
+
+        def INTERVAL(self):
+            return self.getToken(PSParser.INTERVAL, 0)
+
+        def ABSOLUTE(self):
+            return self.getToken(PSParser.ABSOLUTE, 0)
+
         def getRuleIndex(self):
             return PSParser.RULE_atom
 
@@ -3277,6 +3465,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitAtom" ):
                 listener.exitAtom(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAtom" ):
+                return visitor.visitAtom(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3285,7 +3479,7 @@ class PSParser ( Parser ):
         localctx = PSParser.AtomContext(self, self._ctx, self.state)
         self.enterRule(localctx, 58, self.RULE_atom)
         try:
-            self.state = 497
+            self.state = 506
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.LETTER_NO_E, PSParser.GREEK_LETTER]:
@@ -3352,6 +3546,51 @@ class PSParser ( Parser ):
                 self.state = 496
                 self.match(PSParser.VARIABLE)
                 pass
+            elif token in [PSParser.UNION]:
+                self.enterOuterAlt(localctx, 9)
+                self.state = 497
+                self.match(PSParser.UNION)
+                pass
+            elif token in [PSParser.EPSILON]:
+                self.enterOuterAlt(localctx, 10)
+                self.state = 498
+                self.match(PSParser.EPSILON)
+                pass
+            elif token in [PSParser.EQUALITY_CMD]:
+                self.enterOuterAlt(localctx, 11)
+                self.state = 499
+                self.match(PSParser.EQUALITY_CMD)
+                pass
+            elif token in [PSParser.INTERSECTION]:
+                self.enterOuterAlt(localctx, 12)
+                self.state = 500
+                self.match(PSParser.INTERSECTION)
+                pass
+            elif token in [PSParser.PROPER_SUBSET]:
+                self.enterOuterAlt(localctx, 13)
+                self.state = 501
+                self.match(PSParser.PROPER_SUBSET)
+                pass
+            elif token in [PSParser.SUPERSET]:
+                self.enterOuterAlt(localctx, 14)
+                self.state = 502
+                self.match(PSParser.SUPERSET)
+                pass
+            elif token in [PSParser.SUBSET]:
+                self.enterOuterAlt(localctx, 15)
+                self.state = 503
+                self.match(PSParser.SUBSET)
+                pass
+            elif token in [PSParser.INTERVAL]:
+                self.enterOuterAlt(localctx, 16)
+                self.state = 504
+                self.match(PSParser.INTERVAL)
+                pass
+            elif token in [PSParser.ABSOLUTE]:
+                self.enterOuterAlt(localctx, 17)
+                self.state = 505
+                self.match(PSParser.ABSOLUTE)
+                pass
             else:
                 raise NoViableAltException(self)
 
@@ -3362,7 +3601,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class MathitContext(ParserRuleContext):
 
@@ -3394,6 +3632,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitMathit" ):
                 listener.exitMathit(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMathit" ):
+                return visitor.visitMathit(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3403,13 +3647,13 @@ class PSParser ( Parser ):
         self.enterRule(localctx, 60, self.RULE_mathit)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 499
+            self.state = 508
             self.match(PSParser.CMD_MATHIT)
-            self.state = 500
+            self.state = 509
             self.match(PSParser.L_BRACE)
-            self.state = 501
+            self.state = 510
             self.mathit_text()
-            self.state = 502
+            self.state = 511
             self.match(PSParser.R_BRACE)
         except RecognitionException as re:
             localctx.exception = re
@@ -3418,7 +3662,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class Mathit_textContext(ParserRuleContext):
 
@@ -3455,6 +3698,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitMathit_text" ):
                 listener.exitMathit_text(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMathit_text" ):
+                return visitor.visitMathit_text(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3465,18 +3714,18 @@ class PSParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 505 
+            self.state = 514 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 504
+                self.state = 513
                 _la = self._input.LA(1)
                 if not(((((_la - 96)) & ~0x3f) == 0 and ((1 << (_la - 96)) & ((1 << (PSParser.EXP_E - 96)) | (1 << (PSParser.E_NOTATION_E - 96)) | (1 << (PSParser.LETTER_NO_E - 96)))) != 0)):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 507 
+                self.state = 516 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if not (((((_la - 96)) & ~0x3f) == 0 and ((1 << (_la - 96)) & ((1 << (PSParser.EXP_E - 96)) | (1 << (PSParser.E_NOTATION_E - 96)) | (1 << (PSParser.LETTER_NO_E - 96)))) != 0)):
@@ -3489,7 +3738,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class FracContext(ParserRuleContext):
 
@@ -3532,6 +3780,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitFrac" ):
                 listener.exitFrac(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFrac" ):
+                return visitor.visitFrac(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3541,19 +3795,19 @@ class PSParser ( Parser ):
         self.enterRule(localctx, 64, self.RULE_frac)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 509
+            self.state = 518
             self.match(PSParser.CMD_FRAC)
-            self.state = 510
+            self.state = 519
             self.match(PSParser.L_BRACE)
-            self.state = 511
+            self.state = 520
             localctx.upper = self.expr()
-            self.state = 512
+            self.state = 521
             self.match(PSParser.R_BRACE)
-            self.state = 513
+            self.state = 522
             self.match(PSParser.L_BRACE)
-            self.state = 514
+            self.state = 523
             localctx.lower = self.expr()
-            self.state = 515
+            self.state = 524
             self.match(PSParser.R_BRACE)
         except RecognitionException as re:
             localctx.exception = re
@@ -3562,7 +3816,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class BinomContext(ParserRuleContext):
 
@@ -3608,6 +3861,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitBinom" ):
                 listener.exitBinom(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBinom" ):
+                return visitor.visitBinom(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3618,24 +3877,24 @@ class PSParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 517
+            self.state = 526
             _la = self._input.LA(1)
             if not(_la==PSParser.CMD_BINOM or _la==PSParser.CMD_CHOOSE):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
                 self.consume()
-            self.state = 518
+            self.state = 527
             self.match(PSParser.L_BRACE)
-            self.state = 519
+            self.state = 528
             localctx.upper = self.expr()
-            self.state = 520
+            self.state = 529
             self.match(PSParser.R_BRACE)
-            self.state = 521
+            self.state = 530
             self.match(PSParser.L_BRACE)
-            self.state = 522
+            self.state = 531
             localctx.lower = self.expr()
-            self.state = 523
+            self.state = 532
             self.match(PSParser.R_BRACE)
         except RecognitionException as re:
             localctx.exception = re
@@ -3644,7 +3903,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class Func_normal_functions_single_argContext(ParserRuleContext):
 
@@ -3741,6 +3999,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitFunc_normal_functions_single_arg" ):
                 listener.exitFunc_normal_functions_single_arg(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunc_normal_functions_single_arg" ):
+                return visitor.visitFunc_normal_functions_single_arg(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3751,7 +4015,7 @@ class PSParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 525
+            self.state = 534
             _la = self._input.LA(1)
             if not(((((_la - 29)) & ~0x3f) == 0 and ((1 << (_la - 29)) & ((1 << (PSParser.FUNC_LOG - 29)) | (1 << (PSParser.FUNC_LN - 29)) | (1 << (PSParser.FUNC_EXP - 29)) | (1 << (PSParser.FUNC_SIN - 29)) | (1 << (PSParser.FUNC_COS - 29)) | (1 << (PSParser.FUNC_TAN - 29)) | (1 << (PSParser.FUNC_CSC - 29)) | (1 << (PSParser.FUNC_SEC - 29)) | (1 << (PSParser.FUNC_COT - 29)) | (1 << (PSParser.FUNC_ARCSIN - 29)) | (1 << (PSParser.FUNC_ARCCOS - 29)) | (1 << (PSParser.FUNC_ARCTAN - 29)) | (1 << (PSParser.FUNC_ARCCSC - 29)) | (1 << (PSParser.FUNC_ARCSEC - 29)) | (1 << (PSParser.FUNC_ARCCOT - 29)) | (1 << (PSParser.FUNC_SINH - 29)) | (1 << (PSParser.FUNC_COSH - 29)) | (1 << (PSParser.FUNC_TANH - 29)) | (1 << (PSParser.FUNC_ARSINH - 29)) | (1 << (PSParser.FUNC_ARCOSH - 29)) | (1 << (PSParser.FUNC_ARTANH - 29)) | (1 << (PSParser.FUNC_ARCSINH - 29)) | (1 << (PSParser.FUNC_ARCCOSH - 29)) | (1 << (PSParser.FUNC_ARCTANH - 29)) | (1 << (PSParser.FUNC_FLOOR - 29)) | (1 << (PSParser.FUNC_CEIL - 29)))) != 0)):
                 self._errHandler.recoverInline(self)
@@ -3765,7 +4029,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class Func_normal_functions_multi_argContext(ParserRuleContext):
 
@@ -3796,6 +4059,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitFunc_normal_functions_multi_arg" ):
                 listener.exitFunc_normal_functions_multi_arg(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunc_normal_functions_multi_arg" ):
+                return visitor.visitFunc_normal_functions_multi_arg(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3806,7 +4075,7 @@ class PSParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 527
+            self.state = 536
             _la = self._input.LA(1)
             if not(((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (PSParser.FUNC_GCD - 64)) | (1 << (PSParser.FUNC_LCM - 64)) | (1 << (PSParser.FUNC_MAX - 64)) | (1 << (PSParser.FUNC_MIN - 64)))) != 0)):
                 self._errHandler.recoverInline(self)
@@ -3820,7 +4089,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class Func_operator_names_single_argContext(ParserRuleContext):
 
@@ -3863,6 +4131,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitFunc_operator_names_single_arg" ):
                 listener.exitFunc_operator_names_single_arg(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunc_operator_names_single_arg" ):
+                return visitor.visitFunc_operator_names_single_arg(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3873,7 +4147,7 @@ class PSParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 529
+            self.state = 538
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << PSParser.FUNC_ARSINH_NAME) | (1 << PSParser.FUNC_ARCSINH_NAME) | (1 << PSParser.FUNC_ARCOSH_NAME) | (1 << PSParser.FUNC_ARCCOSH_NAME) | (1 << PSParser.FUNC_ARTANH_NAME) | (1 << PSParser.FUNC_ARCTANH_NAME) | (1 << PSParser.FUNC_FLOOR_NAME) | (1 << PSParser.FUNC_CEIL_NAME))) != 0)):
                 self._errHandler.recoverInline(self)
@@ -3887,7 +4161,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class Func_operator_names_multi_argContext(ParserRuleContext):
 
@@ -3912,6 +4185,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitFunc_operator_names_multi_arg" ):
                 listener.exitFunc_operator_names_multi_arg(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunc_operator_names_multi_arg" ):
+                return visitor.visitFunc_operator_names_multi_arg(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3922,7 +4201,7 @@ class PSParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 531
+            self.state = 540
             _la = self._input.LA(1)
             if not(_la==PSParser.FUNC_GCD_NAME or _la==PSParser.FUNC_LCM_NAME):
                 self._errHandler.recoverInline(self)
@@ -3936,7 +4215,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class Func_normal_single_argContext(ParserRuleContext):
 
@@ -3973,6 +4251,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitFunc_normal_single_arg" ):
                 listener.exitFunc_normal_single_arg(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunc_normal_single_arg" ):
+                return visitor.visitFunc_normal_single_arg(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -3981,23 +4265,23 @@ class PSParser ( Parser ):
         localctx = PSParser.Func_normal_single_argContext(self, self._ctx, self.state)
         self.enterRule(localctx, 76, self.RULE_func_normal_single_arg)
         try:
-            self.state = 539
+            self.state = 548
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [PSParser.FUNC_LOG, PSParser.FUNC_LN, PSParser.FUNC_EXP, PSParser.FUNC_SIN, PSParser.FUNC_COS, PSParser.FUNC_TAN, PSParser.FUNC_CSC, PSParser.FUNC_SEC, PSParser.FUNC_COT, PSParser.FUNC_ARCSIN, PSParser.FUNC_ARCCOS, PSParser.FUNC_ARCTAN, PSParser.FUNC_ARCCSC, PSParser.FUNC_ARCSEC, PSParser.FUNC_ARCCOT, PSParser.FUNC_SINH, PSParser.FUNC_COSH, PSParser.FUNC_TANH, PSParser.FUNC_ARSINH, PSParser.FUNC_ARCOSH, PSParser.FUNC_ARTANH, PSParser.FUNC_ARCSINH, PSParser.FUNC_ARCCOSH, PSParser.FUNC_ARCTANH, PSParser.FUNC_FLOOR, PSParser.FUNC_CEIL]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 533
+                self.state = 542
                 self.func_normal_functions_single_arg()
                 pass
             elif token in [PSParser.CMD_OPERATORNAME]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 534
+                self.state = 543
                 self.match(PSParser.CMD_OPERATORNAME)
-                self.state = 535
+                self.state = 544
                 self.match(PSParser.L_BRACE)
-                self.state = 536
+                self.state = 545
                 localctx.func_operator_name = self.func_operator_names_single_arg()
-                self.state = 537
+                self.state = 546
                 self.match(PSParser.R_BRACE)
                 pass
             else:
@@ -4010,7 +4294,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class Func_normal_multi_argContext(ParserRuleContext):
 
@@ -4047,6 +4330,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitFunc_normal_multi_arg" ):
                 listener.exitFunc_normal_multi_arg(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunc_normal_multi_arg" ):
+                return visitor.visitFunc_normal_multi_arg(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4055,23 +4344,23 @@ class PSParser ( Parser ):
         localctx = PSParser.Func_normal_multi_argContext(self, self._ctx, self.state)
         self.enterRule(localctx, 78, self.RULE_func_normal_multi_arg)
         try:
-            self.state = 547
+            self.state = 556
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [PSParser.FUNC_GCD, PSParser.FUNC_LCM, PSParser.FUNC_MAX, PSParser.FUNC_MIN]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 541
+                self.state = 550
                 self.func_normal_functions_multi_arg()
                 pass
             elif token in [PSParser.CMD_OPERATORNAME]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 542
+                self.state = 551
                 self.match(PSParser.CMD_OPERATORNAME)
-                self.state = 543
+                self.state = 552
                 self.match(PSParser.L_BRACE)
-                self.state = 544
+                self.state = 553
                 localctx.func_operator_name = self.func_operator_names_multi_arg()
-                self.state = 545
+                self.state = 554
                 self.match(PSParser.R_BRACE)
                 pass
             else:
@@ -4084,7 +4373,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class FuncContext(ParserRuleContext):
 
@@ -4227,6 +4515,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitFunc" ):
                 listener.exitFunc(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunc" ):
+                return visitor.visitFunc(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4236,44 +4530,17 @@ class PSParser ( Parser ):
         self.enterRule(localctx, 80, self.RULE_func)
         self._la = 0 # Token type
         try:
-            self.state = 686
+            self.state = 695
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,65,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 549
+                self.state = 558
                 self.func_normal_single_arg()
-                self.state = 562
+                self.state = 571
                 self._errHandler.sync(self)
                 la_ = self._interp.adaptivePredict(self._input,43,self._ctx)
                 if la_ == 1:
-                    self.state = 551
-                    self._errHandler.sync(self)
-                    _la = self._input.LA(1)
-                    if _la==PSParser.UNDERSCORE:
-                        self.state = 550
-                        self.subexpr()
-
-
-                    self.state = 554
-                    self._errHandler.sync(self)
-                    _la = self._input.LA(1)
-                    if _la==PSParser.CARET:
-                        self.state = 553
-                        self.supexpr()
-
-
-                    pass
-
-                elif la_ == 2:
-                    self.state = 557
-                    self._errHandler.sync(self)
-                    _la = self._input.LA(1)
-                    if _la==PSParser.CARET:
-                        self.state = 556
-                        self.supexpr()
-
-
                     self.state = 560
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
@@ -4282,64 +4549,91 @@ class PSParser ( Parser ):
                         self.subexpr()
 
 
+                    self.state = 563
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+                    if _la==PSParser.CARET:
+                        self.state = 562
+                        self.supexpr()
+
+
+                    pass
+
+                elif la_ == 2:
+                    self.state = 566
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+                    if _la==PSParser.CARET:
+                        self.state = 565
+                        self.supexpr()
+
+
+                    self.state = 569
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+                    if _la==PSParser.UNDERSCORE:
+                        self.state = 568
+                        self.subexpr()
+
+
                     pass
 
 
-                self.state = 585
+                self.state = 594
                 self._errHandler.sync(self)
                 la_ = self._interp.adaptivePredict(self._input,48,self._ctx)
                 if la_ == 1:
-                    self.state = 565
+                    self.state = 574
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if _la==PSParser.L_LEFT:
-                        self.state = 564
+                        self.state = 573
                         self.match(PSParser.L_LEFT)
 
 
-                    self.state = 567
+                    self.state = 576
                     self.match(PSParser.L_PAREN)
-                    self.state = 568
+                    self.state = 577
                     self.func_single_arg()
-                    self.state = 570
+                    self.state = 579
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if _la==PSParser.R_RIGHT:
-                        self.state = 569
+                        self.state = 578
                         self.match(PSParser.R_RIGHT)
 
 
-                    self.state = 572
+                    self.state = 581
                     self.match(PSParser.R_PAREN)
                     pass
 
                 elif la_ == 2:
-                    self.state = 575
+                    self.state = 584
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if _la==PSParser.ML_LEFT:
-                        self.state = 574
+                        self.state = 583
                         self.match(PSParser.ML_LEFT)
 
 
-                    self.state = 577
+                    self.state = 586
                     self.match(PSParser.L_PAREN)
-                    self.state = 578
+                    self.state = 587
                     self.func_single_arg()
-                    self.state = 580
+                    self.state = 589
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if _la==PSParser.MR_RIGHT:
-                        self.state = 579
+                        self.state = 588
                         self.match(PSParser.MR_RIGHT)
 
 
-                    self.state = 582
+                    self.state = 591
                     self.match(PSParser.R_PAREN)
                     pass
 
                 elif la_ == 3:
-                    self.state = 584
+                    self.state = 593
                     self.func_single_arg_noparens()
                     pass
 
@@ -4348,39 +4642,12 @@ class PSParser ( Parser ):
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 587
+                self.state = 596
                 self.func_normal_multi_arg()
-                self.state = 600
+                self.state = 609
                 self._errHandler.sync(self)
                 la_ = self._interp.adaptivePredict(self._input,53,self._ctx)
                 if la_ == 1:
-                    self.state = 589
-                    self._errHandler.sync(self)
-                    _la = self._input.LA(1)
-                    if _la==PSParser.UNDERSCORE:
-                        self.state = 588
-                        self.subexpr()
-
-
-                    self.state = 592
-                    self._errHandler.sync(self)
-                    _la = self._input.LA(1)
-                    if _la==PSParser.CARET:
-                        self.state = 591
-                        self.supexpr()
-
-
-                    pass
-
-                elif la_ == 2:
-                    self.state = 595
-                    self._errHandler.sync(self)
-                    _la = self._input.LA(1)
-                    if _la==PSParser.CARET:
-                        self.state = 594
-                        self.supexpr()
-
-
                     self.state = 598
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
@@ -4389,64 +4656,91 @@ class PSParser ( Parser ):
                         self.subexpr()
 
 
+                    self.state = 601
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+                    if _la==PSParser.CARET:
+                        self.state = 600
+                        self.supexpr()
+
+
+                    pass
+
+                elif la_ == 2:
+                    self.state = 604
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+                    if _la==PSParser.CARET:
+                        self.state = 603
+                        self.supexpr()
+
+
+                    self.state = 607
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+                    if _la==PSParser.UNDERSCORE:
+                        self.state = 606
+                        self.subexpr()
+
+
                     pass
 
 
-                self.state = 623
+                self.state = 632
                 self._errHandler.sync(self)
                 la_ = self._interp.adaptivePredict(self._input,58,self._ctx)
                 if la_ == 1:
-                    self.state = 603
+                    self.state = 612
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if _la==PSParser.L_LEFT:
-                        self.state = 602
+                        self.state = 611
                         self.match(PSParser.L_LEFT)
 
 
-                    self.state = 605
+                    self.state = 614
                     self.match(PSParser.L_PAREN)
-                    self.state = 606
+                    self.state = 615
                     self.func_multi_arg()
-                    self.state = 608
+                    self.state = 617
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if _la==PSParser.R_RIGHT:
-                        self.state = 607
+                        self.state = 616
                         self.match(PSParser.R_RIGHT)
 
 
-                    self.state = 610
+                    self.state = 619
                     self.match(PSParser.R_PAREN)
                     pass
 
                 elif la_ == 2:
-                    self.state = 613
+                    self.state = 622
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if _la==PSParser.ML_LEFT:
-                        self.state = 612
+                        self.state = 621
                         self.match(PSParser.ML_LEFT)
 
 
-                    self.state = 615
+                    self.state = 624
                     self.match(PSParser.L_PAREN)
-                    self.state = 616
+                    self.state = 625
                     self.func_multi_arg()
-                    self.state = 618
+                    self.state = 627
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if _la==PSParser.MR_RIGHT:
-                        self.state = 617
+                        self.state = 626
                         self.match(PSParser.MR_RIGHT)
 
 
-                    self.state = 620
+                    self.state = 629
                     self.match(PSParser.R_PAREN)
                     pass
 
                 elif la_ == 3:
-                    self.state = 622
+                    self.state = 631
                     self.func_multi_arg_noparens()
                     pass
 
@@ -4455,77 +4749,77 @@ class PSParser ( Parser ):
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 625
+                self.state = 634
                 self.match(PSParser.FUNC_INT)
-                self.state = 646
+                self.state = 655
                 self._errHandler.sync(self)
                 la_ = self._interp.adaptivePredict(self._input,59,self._ctx)
                 if la_ == 1:
-                    self.state = 626
+                    self.state = 635
                     self.subexpr()
-                    self.state = 627
+                    self.state = 636
                     self.supexpr()
 
                 elif la_ == 2:
-                    self.state = 629
+                    self.state = 638
                     self.supexpr()
-                    self.state = 630
+                    self.state = 639
                     self.subexpr()
 
                 elif la_ == 3:
-                    self.state = 632
+                    self.state = 641
                     self.match(PSParser.UNDERSCORE)
-                    self.state = 633
+                    self.state = 642
                     self.match(PSParser.L_BRACE)
-                    self.state = 634
+                    self.state = 643
                     self.match(PSParser.R_BRACE)
 
-                    self.state = 636
+                    self.state = 645
                     self.match(PSParser.CARET)
-                    self.state = 637
+                    self.state = 646
                     self.match(PSParser.L_BRACE)
-                    self.state = 638
+                    self.state = 647
                     self.match(PSParser.R_BRACE)
 
                 elif la_ == 4:
-                    self.state = 639
+                    self.state = 648
                     self.match(PSParser.CARET)
-                    self.state = 640
+                    self.state = 649
                     self.match(PSParser.L_BRACE)
-                    self.state = 641
+                    self.state = 650
                     self.match(PSParser.R_BRACE)
 
-                    self.state = 643
+                    self.state = 652
                     self.match(PSParser.UNDERSCORE)
-                    self.state = 644
+                    self.state = 653
                     self.match(PSParser.L_BRACE)
-                    self.state = 645
+                    self.state = 654
                     self.match(PSParser.R_BRACE)
 
 
-                self.state = 654
+                self.state = 663
                 self._errHandler.sync(self)
                 la_ = self._interp.adaptivePredict(self._input,61,self._ctx)
                 if la_ == 1:
-                    self.state = 649
+                    self.state = 658
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,60,self._ctx)
                     if la_ == 1:
-                        self.state = 648
+                        self.state = 657
                         self.additive(0)
 
 
-                    self.state = 651
+                    self.state = 660
                     self.match(PSParser.DIFFERENTIAL)
                     pass
 
                 elif la_ == 2:
-                    self.state = 652
+                    self.state = 661
                     self.frac()
                     pass
 
                 elif la_ == 3:
-                    self.state = 653
+                    self.state = 662
                     self.additive(0)
                     pass
 
@@ -4534,78 +4828,78 @@ class PSParser ( Parser ):
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 656
+                self.state = 665
                 self.match(PSParser.FUNC_SQRT)
-                self.state = 661
+                self.state = 670
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la==PSParser.L_BRACKET:
-                    self.state = 657
+                    self.state = 666
                     self.match(PSParser.L_BRACKET)
-                    self.state = 658
+                    self.state = 667
                     localctx.root = self.expr()
-                    self.state = 659
+                    self.state = 668
                     self.match(PSParser.R_BRACKET)
 
 
-                self.state = 663
+                self.state = 672
                 self.match(PSParser.L_BRACE)
-                self.state = 664
+                self.state = 673
                 localctx.base = self.expr()
-                self.state = 665
+                self.state = 674
                 self.match(PSParser.R_BRACE)
                 pass
 
             elif la_ == 5:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 667
+                self.state = 676
                 _la = self._input.LA(1)
                 if not(_la==PSParser.FUNC_SUM or _la==PSParser.FUNC_PROD):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 674
+                self.state = 683
                 self._errHandler.sync(self)
                 token = self._input.LA(1)
                 if token in [PSParser.UNDERSCORE]:
-                    self.state = 668
+                    self.state = 677
                     self.subeq()
-                    self.state = 669
+                    self.state = 678
                     self.supexpr()
                     pass
                 elif token in [PSParser.CARET]:
-                    self.state = 671
+                    self.state = 680
                     self.supexpr()
-                    self.state = 672
+                    self.state = 681
                     self.subeq()
                     pass
                 else:
                     raise NoViableAltException(self)
 
-                self.state = 676
+                self.state = 685
                 self.mp(0)
                 pass
 
             elif la_ == 6:
                 self.enterOuterAlt(localctx, 6)
-                self.state = 678
+                self.state = 687
                 self.match(PSParser.FUNC_LIM)
-                self.state = 679
+                self.state = 688
                 self.limit_sub()
-                self.state = 680
+                self.state = 689
                 self.mp(0)
                 pass
 
             elif la_ == 7:
                 self.enterOuterAlt(localctx, 7)
-                self.state = 682
+                self.state = 691
                 self.match(PSParser.EXP_E)
-                self.state = 684
+                self.state = 693
                 self._errHandler.sync(self)
                 la_ = self._interp.adaptivePredict(self._input,64,self._ctx)
                 if la_ == 1:
-                    self.state = 683
+                    self.state = 692
                     self.supexpr()
 
 
@@ -4619,7 +4913,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class ArgsContext(ParserRuleContext):
 
@@ -4649,6 +4942,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitArgs" ):
                 listener.exitArgs(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArgs" ):
+                return visitor.visitArgs(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4657,22 +4956,22 @@ class PSParser ( Parser ):
         localctx = PSParser.ArgsContext(self, self._ctx, self.state)
         self.enterRule(localctx, 82, self.RULE_args)
         try:
-            self.state = 693
+            self.state = 702
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,66,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 688
+                self.state = 697
                 self.expr()
-                self.state = 689
+                self.state = 698
                 self.match(PSParser.COMMA)
-                self.state = 690
+                self.state = 699
                 self.args()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 692
+                self.state = 701
                 self.expr()
                 pass
 
@@ -4684,7 +4983,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class Limit_subContext(ParserRuleContext):
 
@@ -4740,6 +5038,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitLimit_sub" ):
                 listener.exitLimit_sub(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLimit_sub" ):
+                return visitor.visitLimit_sub(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4750,41 +5054,41 @@ class PSParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 695
+            self.state = 704
             self.match(PSParser.UNDERSCORE)
-            self.state = 696
+            self.state = 705
             self.match(PSParser.L_BRACE)
-            self.state = 697
+            self.state = 706
             _la = self._input.LA(1)
             if not(_la==PSParser.LETTER_NO_E or _la==PSParser.GREEK_LETTER):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
                 self.consume()
-            self.state = 698
+            self.state = 707
             self.match(PSParser.LIM_APPROACH_SYM)
-            self.state = 699
+            self.state = 708
             self.expr()
-            self.state = 704
+            self.state = 713
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==PSParser.CARET:
-                self.state = 700
+                self.state = 709
                 self.match(PSParser.CARET)
-                self.state = 701
+                self.state = 710
                 self.match(PSParser.L_BRACE)
-                self.state = 702
+                self.state = 711
                 _la = self._input.LA(1)
                 if not(_la==PSParser.ADD or _la==PSParser.SUB):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 703
+                self.state = 712
                 self.match(PSParser.R_BRACE)
 
 
-            self.state = 706
+            self.state = 715
             self.match(PSParser.R_BRACE)
         except RecognitionException as re:
             localctx.exception = re
@@ -4793,7 +5097,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class Func_single_argContext(ParserRuleContext):
 
@@ -4816,6 +5119,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitFunc_single_arg" ):
                 listener.exitFunc_single_arg(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunc_single_arg" ):
+                return visitor.visitFunc_single_arg(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4825,7 +5134,7 @@ class PSParser ( Parser ):
         self.enterRule(localctx, 86, self.RULE_func_single_arg)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 708
+            self.state = 717
             self.expr()
         except RecognitionException as re:
             localctx.exception = re
@@ -4834,7 +5143,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class Func_single_arg_noparensContext(ParserRuleContext):
 
@@ -4857,6 +5165,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitFunc_single_arg_noparens" ):
                 listener.exitFunc_single_arg_noparens(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunc_single_arg_noparens" ):
+                return visitor.visitFunc_single_arg_noparens(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4866,7 +5180,7 @@ class PSParser ( Parser ):
         self.enterRule(localctx, 88, self.RULE_func_single_arg_noparens)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 710
+            self.state = 719
             self.mp_nofunc(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -4875,7 +5189,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class Func_multi_argContext(ParserRuleContext):
 
@@ -4905,6 +5218,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitFunc_multi_arg" ):
                 listener.exitFunc_multi_arg(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunc_multi_arg" ):
+                return visitor.visitFunc_multi_arg(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4913,22 +5232,22 @@ class PSParser ( Parser ):
         localctx = PSParser.Func_multi_argContext(self, self._ctx, self.state)
         self.enterRule(localctx, 90, self.RULE_func_multi_arg)
         try:
-            self.state = 717
+            self.state = 726
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,68,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 712
+                self.state = 721
                 self.expr()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 713
+                self.state = 722
                 self.expr()
-                self.state = 714
+                self.state = 723
                 self.match(PSParser.COMMA)
-                self.state = 715
+                self.state = 724
                 self.func_multi_arg()
                 pass
 
@@ -4940,7 +5259,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class Func_multi_arg_noparensContext(ParserRuleContext):
 
@@ -4963,6 +5281,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitFunc_multi_arg_noparens" ):
                 listener.exitFunc_multi_arg_noparens(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFunc_multi_arg_noparens" ):
+                return visitor.visitFunc_multi_arg_noparens(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -4972,7 +5296,7 @@ class PSParser ( Parser ):
         self.enterRule(localctx, 92, self.RULE_func_multi_arg_noparens)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 719
+            self.state = 728
             self.mp_nofunc(0)
         except RecognitionException as re:
             localctx.exception = re
@@ -4981,7 +5305,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class SubexprContext(ParserRuleContext):
 
@@ -5017,6 +5340,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitSubexpr" ):
                 listener.exitSubexpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSubexpr" ):
+                return visitor.visitSubexpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5026,21 +5355,21 @@ class PSParser ( Parser ):
         self.enterRule(localctx, 94, self.RULE_subexpr)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 721
+            self.state = 730
             self.match(PSParser.UNDERSCORE)
-            self.state = 727
+            self.state = 736
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE]:
-                self.state = 722
+            if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.UNION, PSParser.SUBSET, PSParser.SUPERSET, PSParser.INTERSECTION, PSParser.PROPER_SUBSET, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.EPSILON, PSParser.EQUALITY_CMD]:
+                self.state = 731
                 self.atom()
                 pass
             elif token in [PSParser.L_BRACE]:
-                self.state = 723
+                self.state = 732
                 self.match(PSParser.L_BRACE)
-                self.state = 724
+                self.state = 733
                 self.expr()
-                self.state = 725
+                self.state = 734
                 self.match(PSParser.R_BRACE)
                 pass
             else:
@@ -5053,7 +5382,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class SupexprContext(ParserRuleContext):
 
@@ -5089,6 +5417,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitSupexpr" ):
                 listener.exitSupexpr(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSupexpr" ):
+                return visitor.visitSupexpr(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5098,21 +5432,21 @@ class PSParser ( Parser ):
         self.enterRule(localctx, 96, self.RULE_supexpr)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 729
+            self.state = 738
             self.match(PSParser.CARET)
-            self.state = 735
+            self.state = 744
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE]:
-                self.state = 730
+            if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.UNION, PSParser.SUBSET, PSParser.SUPERSET, PSParser.INTERSECTION, PSParser.PROPER_SUBSET, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.EPSILON, PSParser.EQUALITY_CMD]:
+                self.state = 739
                 self.atom()
                 pass
             elif token in [PSParser.L_BRACE]:
-                self.state = 731
+                self.state = 740
                 self.match(PSParser.L_BRACE)
-                self.state = 732
+                self.state = 741
                 self.expr()
-                self.state = 733
+                self.state = 742
                 self.match(PSParser.R_BRACE)
                 pass
             else:
@@ -5125,7 +5459,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class SubeqContext(ParserRuleContext):
 
@@ -5157,6 +5490,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitSubeq" ):
                 listener.exitSubeq(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSubeq" ):
+                return visitor.visitSubeq(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5166,13 +5505,13 @@ class PSParser ( Parser ):
         self.enterRule(localctx, 98, self.RULE_subeq)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 737
+            self.state = 746
             self.match(PSParser.UNDERSCORE)
-            self.state = 738
+            self.state = 747
             self.match(PSParser.L_BRACE)
-            self.state = 739
+            self.state = 748
             self.equality()
-            self.state = 740
+            self.state = 749
             self.match(PSParser.R_BRACE)
         except RecognitionException as re:
             localctx.exception = re
@@ -5181,7 +5520,6 @@ class PSParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
-
 
     class SupeqContext(ParserRuleContext):
 
@@ -5213,6 +5551,12 @@ class PSParser ( Parser ):
             if hasattr( listener, "exitSupeq" ):
                 listener.exitSupeq(self)
 
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSupeq" ):
+                return visitor.visitSupeq(self)
+            else:
+                return visitor.visitChildren(self)
+
 
 
 
@@ -5222,13 +5566,13 @@ class PSParser ( Parser ):
         self.enterRule(localctx, 100, self.RULE_supeq)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 742
+            self.state = 751
             self.match(PSParser.UNDERSCORE)
-            self.state = 743
+            self.state = 752
             self.match(PSParser.L_BRACE)
-            self.state = 744
+            self.state = 753
             self.equality()
-            self.state = 745
+            self.state = 754
             self.match(PSParser.R_BRACE)
         except RecognitionException as re:
             localctx.exception = re
