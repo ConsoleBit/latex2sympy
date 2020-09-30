@@ -1,10 +1,10 @@
-import sympy
+from sympy import symbols, pi
 
 import latex2sympy
-from sympy import ImageSet, Lambda, pi, Integers, Union, And, symbols
 
 x, y, z = symbols('x,y,z')
 a, b, c = symbols('a b c')
+
 
 # a = "ImageSet(Lambda(_n, _n*pi + pi/12), Integers) \ Union(ImageSet(Lambda(_n, 2*_n*pi + 5*pi/4), Integers)"
 # a = r"\subset"
@@ -25,7 +25,7 @@ a, b, c = symbols('a b c')
 
 # a = r"\epsilon{\variable{p},\variable{q,p}}"
 #
-# a = r"\variable{p}\lt\variable{q}"
+# a = r"\pi\gt6"
 #
 # a = r"\variable{p}\leq\variable{q}"
 #
@@ -33,11 +33,13 @@ a, b, c = symbols('a b c')
 #
 # a = r"\variable{p}\geq\variable{q}"
 #
-# a = r"\variable{p}\eq\variable{q}"
+# a = r"\lcm(\variable{x}, \variable{y})\eq\lcm(\variable{a}, \variable{b})"
+
+# a = r"\lcm(\variable{x}, \variable{y})"
 #
 # a = r"\variable{p}\neq\variable{q}"
 #
-a = r"\variable{x}\and\variable{y}"
+# a = r"0\and0"
 
 # a = r"\variable{p}\or\variable{q}"
 
@@ -50,11 +52,22 @@ a = r"\variable{x}\and\variable{y}"
 
 # a = r"\variable{p}\open_int\variable{x}\variable{y}"
 # a = r"\absolute\variable{x}"
+# a = r"\union{\variable{x},\variable{y}}"
+# a = r"\variable{\\alpha}"
+
+# a = r"\nrt{8,3}"
+# sympy.Pow(symbol[0],1/symbol[1]).subs({symbol[0]:8,symbol[1]:3})
+
+# a = r"\begin{matrix}1 & 2 & 3\\a & b & c\end{matrix}"
+
+a = r"\not{\variable{x}}"
 
 res = latex2sympy.process_sympy(a)
 print('Result: ', res)
 
-# print(res._eval_relation(2,2))
+
+
+# print(res._eval_relation(pi,1))
 
 # for i in b.free_symbols:
 #     if "_" in i.name:
@@ -62,7 +75,7 @@ print('Result: ', res)
 #         dimension = dimension[1: len(dimension) - 1]
 #         dimension = dimension.split(",")
 #         print("Variable", variable, ", Dimension", dimension)
-# print(res.evalf(4))
+# print(res.evalf(1))
 
 # from sympy.logic.boolalg import as_Boolean
 #
@@ -102,3 +115,4 @@ print('Result: ', res)
 #
 
 # sympy.And(True,True)
+

@@ -91,4 +91,3 @@ def test_variable_multi_arg_func():
     assert_equal("\\max(\\variable{x}, \\variable{y})", Max(Symbol('x' + hashlib.md5('x'.encode()).hexdigest(), real=True), Symbol('y' + hashlib.md5('y'.encode()).hexdigest(), real=True), evaluate=False))
     assert_equal("\\min(\\variable{x}, \\variable{y})", Min(Symbol('x' + hashlib.md5('x'.encode()).hexdigest(), real=True), Symbol('y' + hashlib.md5('y'.encode()).hexdigest(), real=True), evaluate=False))
 
-

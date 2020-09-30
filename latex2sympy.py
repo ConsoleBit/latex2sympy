@@ -102,7 +102,7 @@ def convert_relation(rel):
     lh = convert_relation(rel.relation(0))
     rh = convert_relation(rel.relation(1))
     if rel.LT():
-        return sympy.StrictLessThan(lh, rh, evaluate=False)
+        return sympy.StrictLessThan(lh, rh)
     elif rel.LTE():
         return sympy.LessThan(lh, rh, evaluate=False)
     elif rel.GT():
@@ -296,7 +296,7 @@ def convert_postfix_list(arr, i=0):
 
     res = convert_postfix(arr[i])
 
-    if isinstance(res, sympy.Expr) or isinstance(res, sympy.And) or isinstance(res, sympy.Or) or isinstance(res,
+    if isinstance(res, sympy.Expr) or isinstance(res, sympy.And) or isinstance(res, sympy.Not) or isinstance(res, sympy.Or) or isinstance(res,
                                                                                    sympy.Matrix) or res is sympy.S.EmptySet or isinstance(
             res,
             bool) or isinstance(
@@ -620,6 +620,67 @@ def convert_atom(atom):
             return sympy.Or(process_sympy(blank[0]), process_sympy(blank[1]))
         else:
             raise Exception("Unrecognized symbol")
+
+    elif atom.NRT():
+        text = atom.NRT().getText()
+        is_percent = text.endswith("\\%")
+        trim_amount = 3 if is_percent else 1
+        name = text[5:]
+        name = name[0:len(name) - trim_amount]
+        symbol_name = name
+
+        # replace the variable for already known variable values
+        if name in VARIABLE_VALUES:
+            # if a sympy class
+            if isinstance(VARIABLE_VALUES[name], tuple(sympy.core.all_classes)):
+                symbol = VARIABLE_VALUES[name]
+
+            # if NOT a sympy class
+            else:
+                symbol = parse_expr(str(VARIABLE_VALUES[name]))
+        else:
+            symbol = process_sympy(symbol_name)
+            symbol = sympy.Pow(symbol[0], 1/symbol[1])
+
+
+            # symbol = list(map(list, [symbol[0].name, symbol[1].name]))
+
+        if is_percent:
+            return sympy.Mul(symbol, sympy.Pow(100, -1, evaluate=False), evaluate=False)
+
+        # return the symbol
+        return symbol
+
+    elif atom.NOT_CMD():
+        text = atom.NOT_CMD().getText()
+        is_percent = text.endswith("\\%")
+        trim_amount = 3 if is_percent else 1
+        name = text[5:]
+        name = name[0:len(name) - trim_amount]
+        symbol_name = name
+
+        # replace the variable for already known variable values
+        if name in VARIABLE_VALUES:
+            # if a sympy class
+            if isinstance(VARIABLE_VALUES[name], tuple(sympy.core.all_classes)):
+                symbol = VARIABLE_VALUES[name]
+
+            # if NOT a sympy class
+            else:
+                symbol = parse_expr(str(VARIABLE_VALUES[name]))
+        else:
+            symbol = process_sympy(symbol_name)
+            symbol = sympy.Not(symbol)
+
+
+            # symbol = list(map(list, [symbol[0].name, symbol[1].name]))
+
+        if is_percent:
+            return sympy.Mul(symbol, sympy.Pow(100, -1, evaluate=False), evaluate=False)
+
+        # return the symbol
+        return symbol
+
 
     elif atom.PROPER_SUBSET():
         text = atom.PROPER_SUBSET().getText()
