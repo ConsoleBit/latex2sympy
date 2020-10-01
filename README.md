@@ -46,7 +46,7 @@ process_sympy("\\frac{d}{dx} x^{2}")
 |`\and{\variable{x},\variable{y}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%20%5Cland%20y)|`x & y`
 |`\or{\variable{x},\variable{y}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%20%5Clor%20y)| `x or y`
 |`\not{\variable{x}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%20%5Cneg%20y)|`~x`
-|`\nrt{\variable{x},\variable{n}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20%5Csqrt%5Bx%5D%7Bn%7D)|`x**(1/n)`
+|`\nrt{\variable{x},\variable{n}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20%5Csqrt%5Bn%5D%7Bx%7D%20)|`x**(1/n)`
 ## Contributing
 
 Contributors are welcome! Feel free to open a pull request
