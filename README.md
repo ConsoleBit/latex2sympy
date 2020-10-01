@@ -57,7 +57,7 @@ process_sympy("\\frac{d}{dx} x^{2}")
 |`\union{\variable{a},\variable{b}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20a%20%5Cbigcup%20b)|`a,b`
 |`\intersection{\variable{a},\variable{b}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20a%20%5Cbigcap%20%20b)|`a,b`
 |`\subset{\variable{a},\variable{a}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20a%20%5Csubseteq%20b)|`[a]`
-|`\superset{\variable{a},\variable{a}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20a%20%5Csqsupseteq%20b)|`[a]`
+|`\superset{\variable{a},\variable{a}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20a%20%5Csupseteq%20b)|`[a]`
 Contributors are welcome! Feel free to open a pull request
 or an issue.
 
