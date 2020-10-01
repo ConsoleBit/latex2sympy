@@ -1,8 +1,9 @@
 import sympy
 import antlr4
 from antlr4.error.ErrorListener import ErrorListener
+from sympy.core.numbers import Zero, One
 from sympy.core.operations import AssocOp
-from sympy.logic.boolalg import And, Or, Not
+from sympy.logic.boolalg import And, Or, Not, BooleanFalse, BooleanTrue
 
 try:
     from gen.PSParser import PSParser
@@ -303,7 +304,7 @@ def convert_postfix_list(arr, i=0):
         res,
         set) or isinstance(
         res,
-        sympy.Set) or isinstance(res, list):
+        sympy.Set) or isinstance(res, list) or isinstance(res, (Zero, One, BooleanFalse, BooleanTrue)):
         if i == len(arr) - 1:
             return res  # nothing to multiply by
         else:
@@ -860,6 +861,13 @@ def convert_atom(atom):
                                      list(process_sympy(s[1]).free_symbols)[1]).contains(
                 list(process_sympy(s[0]).free_symbols)[0])
             return s
+    elif atom.INTERVAL_STEP():
+        s = atom.INTERVAL().getText().split('\\step_int')
+        s = sympy.Interval.Ropen(list(process_sympy(s[1]).free_symbols)[0],
+                                 list(process_sympy(s[1]).free_symbols)[1]).contains(
+            list(process_sympy(s[0]).free_symbols)[0])
+        return s
+
 
 
     elif atom.PERCENT_NUMBER():
