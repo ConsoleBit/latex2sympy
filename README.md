@@ -54,7 +54,10 @@ process_sympy("\\frac{d}{dx} x^{2}")
 |`\variable{x}\ropen_int\variable{a}\variable{b})`|![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20x%5Cepsilon%5B2,6%3E)|`(x >= a) & (x < b)`
 |`\absolute\variable{p}`|![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%7C-5%7C)|`Abs(p) `|
 |`\summation{\variable{fi},\variable{i},\variable{y},\variable{z}}`|![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%5Csum_%7Bi=y%7D%5E%7Bz%7Dfi)|`fi*(-y + z + 1)`|## Contributing
-
+|`\union{\variable{a},\variable{b}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20a%20%5Cbigcup%20b)|`a,b`
+|`\intersection{\variable{a},\variable{b}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20a%20%5Cbigcap%20%20b)|`a,b`
+|`\subset{\variable{a},\variable{a}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20a%20%5Csubseteq%20b)|`[a]`
+|`\superset{\variable{a},\variable{a}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20a%20%5Csqsupseteq%20b)|`[a]`
 Contributors are welcome! Feel free to open a pull request
 or an issue.
 

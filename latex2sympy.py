@@ -827,6 +827,33 @@ def convert_atom(atom):
         # return the symbol
         return symbol
 
+    elif atom.SET():
+        text = atom.SET().getText()
+        is_percent = text.endswith("\\%")
+        trim_amount = 3 if is_percent else 1
+        name = text[5:]
+
+        name = name[0:len(name) - trim_amount]
+        print(name)
+        symbol_name = name
+        symbol = process_sympy(symbol_name)
+        print(symbol)
+        s = set()
+        for sym in symbol:
+            s.add(sym)
+        return s
+
+    elif atom.SET_EQUALITY():
+        text = atom.SET_EQUALITY().getText()
+        is_percent = text.endswith("\\%")
+        trim_amount = 3 if is_percent else 1
+        name = text[10:]
+        name = name[0:len(name) - trim_amount]
+        print(name)
+        symbol_name = name
+        symbol = process_sympy(symbol_name)
+        return sympy.Equality(symbol[0], symbol[1])
+
     elif atom.ABSOLUTE():
         text = atom.ABSOLUTE().getText().split('\\absolute')
         text = sympy.Abs(process_sympy(text[1]))
