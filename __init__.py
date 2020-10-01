@@ -1,14 +1,9 @@
-from sympy import symbols, pi
-
 import latex2sympy
-
-x, y, z = symbols('x,y,z')
-a, b, c = symbols('a b c')
 
 a = r"1+2-3\cdot\frac{4}{5}+6^7+\sqrt{5}+6+\variable{DEMO_{abc,bca,cde}}"
 
-res = latex2sympy.process_sympy(a)
-print('Result: ', res)
+b = latex2sympy.process_sympy(a)
+print(b)
 
 for i in b.free_symbols:
     if "_" in i.name:
@@ -16,4 +11,4 @@ for i in b.free_symbols:
         dimension = dimension[1: len(dimension) - 1]
         dimension = dimension.split(",")
         print("Variable", variable, ", Dimension", dimension)
-print(res.evalf(1))
+print(b.evalf(1))

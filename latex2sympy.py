@@ -2,7 +2,7 @@ import sympy
 import antlr4
 from antlr4.error.ErrorListener import ErrorListener
 from sympy.core.operations import AssocOp
-from sympy.logic import boolalg
+from sympy.logic.boolalg import And, Or, Not
 
 try:
     from gen.PSParser import PSParser
@@ -612,14 +612,64 @@ def convert_atom(atom):
         elif '\\neq' in s:
             blank = atom.EQUALITY_CMD().getText().split('\\neq')
             return sympy.Ne(process_sympy(blank[0]), process_sympy(blank[1]))
-        elif '\\and' in s:
-            blank = atom.EQUALITY_CMD().getText().split('\\and')
-            return sympy.And(process_sympy(blank[0]), process_sympy(blank[1]))
-        elif '\\or' in s:
-            blank = atom.EQUALITY_CMD().getText().split('\\or')
-            return sympy.Or(process_sympy(blank[0]), process_sympy(blank[1]))
         else:
             raise Exception("Unrecognized symbol")
+
+    elif atom.SUMMATION():
+        text = atom.SUMMATION().getText()
+        is_percent = text.endswith("\\%")
+        trim_amount = 3 if is_percent else 1
+        name = text[11:]
+
+        name = name[0:len(name) - trim_amount]
+        # add hash to distinguish from regular symbols
+        # hash = hashlib.md5(name.encode()).hexdigest()
+        # symbol_name = name + hash
+        symbol_name = name
+
+        if name in VARIABLE_VALUES:
+            # if a sympy class
+            if isinstance(VARIABLE_VALUES[name], tuple(sympy.core.all_classes)):
+                symbol = VARIABLE_VALUES[name]
+
+            # if NOT a sympy class
+            else:
+                symbol = parse_expr(str(VARIABLE_VALUES[name]))
+        else:
+            symbol = process_sympy(symbol_name)
+            a, b, c, d = symbol[0], symbol[1], symbol[2], symbol[3]
+            symbol = sympy.summation(a, (b, c, d))
+
+        return symbol
+
+    elif atom.EQUIVALENCE():
+        text = atom.EQUIVALENCE().getText()
+        is_percent = text.endswith("\\%")
+        trim_amount = 3 if is_percent else 1
+        name = text[13:]
+
+        name = name[0:len(name) - trim_amount]
+        # add hash to distinguish from regular symbols
+        # hash = hashlib.md5(name.encode()).hexdigest()
+        # symbol_name = name + hash
+        symbol_name = name
+
+        # replace the variable for already known variable values
+        if name in VARIABLE_VALUES:
+            # if a sympy class
+            if isinstance(VARIABLE_VALUES[name], tuple(sympy.core.all_classes)):
+                symbol = VARIABLE_VALUES[name]
+
+            # if NOT a sympy class
+            else:
+                symbol = parse_expr(str(VARIABLE_VALUES[name]))
+        else:
+            symbol = process_sympy(symbol_name)
+            a, b = symbol[0], symbol[1]
+            symbol = sympy.Equivalent(a, b)
+
+        # return the symbol
+        return symbol
 
     elif atom.NRT():
         text = atom.NRT().getText()
@@ -651,11 +701,17 @@ def convert_atom(atom):
         # return the symbol
         return symbol
 
-    elif atom.NOT_CMD():
-        text = atom.NOT_CMD().getText()
+
+    elif atom.LOGICAL():
+        text = atom.LOGICAL().getText()
         is_percent = text.endswith("\\%")
         trim_amount = 3 if is_percent else 1
-        name = text[5:]
+        if "\\and" in text:
+            name = text[5:]
+        elif "\\not" in text:
+            name = text[5:]
+        elif "\\or" in text:
+            name = text[4:]
         name = name[0:len(name) - trim_amount]
         symbol_name = name
 
@@ -670,7 +726,12 @@ def convert_atom(atom):
                 symbol = parse_expr(str(VARIABLE_VALUES[name]))
         else:
             symbol = process_sympy(symbol_name)
-            symbol = sympy.Not(symbol)
+            if "and" in text:
+                symbol = And(symbol[0], symbol[1])
+            elif "or" in text:
+                symbol = sympy.Or(symbol[0], symbol[1])
+            else:
+                symbol = Not(symbol)
 
 
             # symbol = list(map(list, [symbol[0].name, symbol[1].name]))
