@@ -47,7 +47,13 @@ process_sympy("\\frac{d}{dx} x^{2}")
 |`\or{\variable{x},\variable{y}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%20%5Clor%20y)| `x or y`
 |`\not{\variable{x}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%20%5Cneg%20y)|`~x`
 |`\nrt{\variable{x},\variable{n}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20%5Csqrt%5Bn%5D%7Bx%7D%20)|`x**(1/n)`
-## Contributing
+|`\equivalence{\variable{a},\variable{b}`|![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%205%5Cequiv%204)|`Equivalent(a, b)`
+|`\variable{x}\open_int\variable{a}\variable{b})`|![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20x%5Cepsilon%3C2,6%3E%20)|`(x > a) & (x < b)`
+|`\variable{x}\close_int\variable{a}\variable{b})`|![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20x%5Cepsilon%5B2,6%5D)|`(x >= a) & (x <= b)`
+|`\variable{x}\lopen_int\variable{a}\variable{b})`|![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20x%5Cepsilon%3C2,6%5D)|`(x > a) & (x <= y)`
+|`\variable{x}\ropen_int\variable{a}\variable{b})`|![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20x%5Cepsilon%5B2,6%3E)|`(x >= a) & (x < b)`
+|`\absolute\variable{p}`|![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%7C-5%7C)|`Abs(p) `|
+|`\summation{\variable{fi},\variable{i},\variable{y},\variable{z}}`|![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%5Csum_%7Bi=y%7D%5E%7Bz%7Dfi)|`fi*(-y + z + 1)`|## Contributing
 
 Contributors are welcome! Feel free to open a pull request
 or an issue.
