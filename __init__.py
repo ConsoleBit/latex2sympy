@@ -3,9 +3,7 @@ from sympy import Symbol, Equality
 import latex2sympy
 
 
-# a = r"1+2-3\cdot\frac{4}{5}+6^7+\sqrt{5}+6+\variable{DEMO_{abc,bca,cde}}"
-a = r"\variable{x}\cup\variable{y}"
-
+a = r"1+2-3\cdot\frac{4}{5}+6^7+\sqrt{5}+6+\variable{DEMO_{abc,bca,cde}}"
 b = latex2sympy.process_sympy(a)
 print(b)
 

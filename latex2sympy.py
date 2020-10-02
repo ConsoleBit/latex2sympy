@@ -515,39 +515,6 @@ def convert_atom(atom):
         return symbol
 
 
-    elif atom.EPSILON():
-        text = atom.EPSILON().getText()
-        is_percent = text.endswith("\\%")
-        trim_amount = 3 if is_percent else 1
-        name = text[4:]
-        name = name[0:len(name) - trim_amount]
-        # add hash to distinguish from regular symbols
-        # hash = hashlib.md5(name.encode()).hexdigest()
-        # symbol_name = name + hash
-        symbol_name = name
-
-        # replace the variable for already known variable values
-        if name in VARIABLE_VALUES:
-            # if a sympy class
-            if isinstance(VARIABLE_VALUES[name], tuple(sympy.core.all_classes)):
-                symbol = VARIABLE_VALUES[name]
-
-            # if NOT a sympy class
-            else:
-                symbol = parse_expr(str(VARIABLE_VALUES[name]))
-        else:
-            symbol = process_sympy(symbol_name)
-            if (symbol[0].free_symbols) in (symbol[1].free_symbols):
-                symbol = True
-
-            # symbol = list(map(list, [symbol[0].name, symbol[1].name]))
-
-        if is_percent:
-            return sympy.Mul(symbol, sympy.Pow(100, -1, evaluate=False), evaluate=False)
-
-        # return the symbol
-        return symbol
-
     elif atom.EQUALITY_CMD():
         s = atom.EQUALITY_CMD().getText()
         if '<' in s:
@@ -590,21 +557,109 @@ def convert_atom(atom):
             symbol = blank[0]
             return symbol
         elif '\\cap' in s:
-            pass
-        elif '\\leq' in s:
-            blank = atom.EQUALITY_CMD().getText().split('\\leq')
-            return sympy.LessThan(process_sympy(blank[0]), process_sympy(blank[1]))
-        elif '\\geq' in s:
-            blank = atom.EQUALITY_CMD().getText().split('\\geq')
-            return sympy.GreaterThan(process_sympy(blank[0]), process_sympy(blank[1]))
-        elif '=' in s:
-            blank = atom.EQUALITY_CMD().getText().split('=')
-            return sympy.Eq(process_sympy(blank[0]), process_sympy(blank[1]))
-        elif '\\neq' in s:
-            blank = atom.EQUALITY_CMD().getText().split('\\neq')
-            return sympy.Ne(process_sympy(blank[0]), process_sympy(blank[1]))
+            temps = s.split('\\cap')
+            blank = []
+            for temp in temps:
+                val = set(map(str, set(process_sympy(temp).name)))
+                blank.append(val)
+
+            def cus_intersection(lis1, lis2):
+                res = set().intersection(lis1, lis2)
+                return res
+
+            for i in blank[1:]:
+                a = cus_intersection(blank[0], i)
+                blank[0] = a
+            symbol = blank[0]
+            return symbol
+        elif '\\subseteq' in s:
+            temps = s.split('\\subseteq')
+            blank = []
+            for temp in temps:
+                val = set(map(str, set(process_sympy(temp).name)))
+                blank.append(val)
+            symbol_subset = (blank[0]).issubset(blank[1])
+            return symbol_subset
+
+        elif '\\supseteq' in s:
+            temps = s.split('\\supseteq')
+            blank = []
+            for temp in temps:
+                val = set(map(str, set(process_sympy(temp).name)))
+                blank.append(val)
+            symbol_subset = (blank[0]).issuperset(blank[1])
+            return symbol_subset
+
+        elif '\\subset' in s:
+            temps = s.split('\\subset')
+            blank = []
+            for temp in temps:
+                val = set(map(str, set(process_sympy(temp).name)))
+                blank.append(val)
+            symbol_subset = (blank[0]).issubset(blank[1])
+            if symbol_subset == True and blank[0] < blank[1]:
+                return True
+            return False
+
+        elif '\\supset' in s:
+            temps = s.split('\\supset')
+            blank = []
+            for temp in temps:
+                val = set(map(str, set(process_sympy(temp).name)))
+                blank.append(val)
+            symbol_subset = (blank[0]).issuperset(blank[1])
+            if symbol_subset == True and blank[0] > blank[1]:
+                return True
+            return False
+
+        elif '\\in' in s:
+            temps = s.split('\\in')
+            blank = []
+            for temp in temps:
+                val = set(map(str, set(process_sympy(temp).name)))
+                blank.append(val)
+            if list(blank[0])[0] in blank[1]:
+                symbol = True
+                return symbol
+            return False
+
+        elif '\\notin' in s:
+            temps = s.split('\\notin')
+            blank = []
+            for temp in temps:
+                val = set(map(str, set(process_sympy(temp).name)))
+                blank.append(val)
+            if list(blank[0])[0] not in blank[1]:
+                symbol = True
+                return symbol
+            return False
+
         else:
             raise Exception("Unrecognized symbol")
+
+    elif atom.INTERVAL():
+        t = atom.INTERVAL().getText()
+        if '[' in t and ']' in t:
+            s = atom.INTERVAL().getText().split('\\in')
+            s = sympy.Interval(process_sympy(s[1])[0], process_sympy(s[1])[1]).contains(process_sympy(s[0]))
+            return s
+        elif '[' in t and '>' in t:
+            s = atom.INTERVAL().getText().split('\\in')
+            s1 = s[1].replace('>', ']')
+            s = sympy.Interval.Ropen(process_sympy(s1)[0], process_sympy(s1)[1]).contains(process_sympy(s[0]))
+            return s
+        elif '<' in t and '>' in t:
+            s = atom.INTERVAL().getText().split('\\in')
+            s1 = s[1].replace('>', ']')
+            s1 = s1.replace('<', '[')
+            s = sympy.Interval.open(process_sympy(s1)[0], process_sympy(s1)[1]).contains(process_sympy(s[0]))
+            return s
+
+        elif '<' in t and ']' in t:
+            s = atom.INTERVAL().getText().split('\\in')
+            s1 = s[1].replace('<', '[')
+            s = sympy.Interval.Lopen(process_sympy(s1)[0], process_sympy(s1)[1]).contains(process_sympy(s[0]))
+            return s
 
     elif atom.SUMMATION():
         text = atom.SUMMATION().getText()
@@ -734,58 +789,6 @@ def convert_atom(atom):
         return symbol
 
 
-    elif atom.PROPER_SUBSET():
-        text = atom.PROPER_SUBSET().getText()
-        is_percent = text.endswith("\\%")
-        trim_amount = 3 if is_percent else 1
-        name = text[14:]
-        name = name[0:len(name) - trim_amount]
-        symbol_name = name
-        symbol = process_sympy(symbol_name)
-        symbol_subset = (symbol[1].free_symbols).issubset(symbol[0].free_symbols)
-        if symbol_subset == True and symbol[0].name != symbol[1].name:
-            return True
-        return False
-    elif atom.SUBSET():
-        text = atom.SUBSET().getText()
-        is_percent = text.endswith("\\%")
-        trim_amount = 3 if is_percent else 1
-        name = text[10:]
-        name = name[0:len(name) - trim_amount]
-        print(name)
-        symbol_name = name
-        symbol = process_sympy(symbol_name)
-        symbol_subset = (symbol[0].free_symbols).issubset(symbol[1].free_symbols)
-        return symbol_subset
-
-    elif atom.SUPERSET():
-        text = atom.SUPERSET().getText()
-        is_percent = text.endswith("\\%")
-        trim_amount = 3 if is_percent else 1
-        name = text[10:]
-        name = name[0:len(name) - trim_amount]
-        print(name)
-        symbol_name = name
-        symbol = process_sympy(symbol_name)
-        symbol_subset = (symbol[1].free_symbols).issuperset(symbol[0].free_symbols)
-        return symbol_subset
-
-    elif atom.SET():
-        text = atom.SET().getText()
-        is_percent = text.endswith("\\%")
-        trim_amount = 3 if is_percent else 1
-        name = text[5:]
-
-        name = name[0:len(name) - trim_amount]
-        print(name)
-        symbol_name = name
-        symbol = process_sympy(symbol_name)
-        print(symbol)
-        s = set()
-        for sym in symbol:
-            s.add(sym)
-        return s
-
     elif atom.SET_EQUALITY():
         text = atom.SET_EQUALITY().getText()
         is_percent = text.endswith("\\%")
@@ -801,43 +804,6 @@ def convert_atom(atom):
         text = atom.ABSOLUTE().getText().split('\\absolute')
         text = sympy.Abs(process_sympy(text[1]))
         return text
-
-    elif atom.INTERVAL():
-        t = atom.INTERVAL().getText()
-        if '\\close_int' in t:
-            s = atom.INTERVAL().getText().split('\\close_int')
-            s = sympy.Interval(list(process_sympy(s[1]).free_symbols)[0],
-                               list(process_sympy(s[1]).free_symbols)[1]).contains(
-                list(process_sympy(s[0]).free_symbols)[0])
-            return s
-
-        elif '\\open_int' in t:
-            s = atom.INTERVAL().getText().split('\\open_int')
-            s = sympy.Interval.open(list(process_sympy(s[1]).free_symbols)[0],
-                                    list(process_sympy(s[1]).free_symbols)[1]).contains(
-                list(process_sympy(s[0]).free_symbols)[0])
-            return s
-
-        elif '\\lopen_int' in t:
-            s = atom.INTERVAL().getText().split('\\lopen_int')
-            s = sympy.Interval.Lopen(list(process_sympy(s[1]).free_symbols)[0],
-                                     list(process_sympy(s[1]).free_symbols)[1]).contains(
-                list(process_sympy(s[0]).free_symbols)[0])
-            return s
-
-        elif '\\ropen_int' in t:
-            s = atom.INTERVAL().getText().split('\\ropen_int')
-            s = sympy.Interval.Ropen(list(process_sympy(s[1]).free_symbols)[0],
-                                     list(process_sympy(s[1]).free_symbols)[1]).contains(
-                list(process_sympy(s[0]).free_symbols)[0])
-            return s
-    elif atom.INTERVAL_STEP():
-        s = atom.INTERVAL().getText().split('\\step_int')
-        s = sympy.Interval.Ropen(list(process_sympy(s[1]).free_symbols)[0],
-                                 list(process_sympy(s[1]).free_symbols)[1]).contains(
-            list(process_sympy(s[0]).free_symbols)[0])
-        return s
-
 
 
     elif atom.PERCENT_NUMBER():
