@@ -592,11 +592,11 @@ def convert_atom(atom):
 
     elif atom.EQUALITY_CMD():
         s = atom.EQUALITY_CMD().getText()
-        if '\\lt' in s:
-            blank = atom.EQUALITY_CMD().getText().split('\\lt')
+        if '<' in s:
+            blank = atom.EQUALITY_CMD().getText().split('<')
             return sympy.StrictLessThan(process_sympy(blank[0]), process_sympy(blank[1]))
-        elif '\\gt' in s:
-            blank = atom.EQUALITY_CMD().getText().split('\\gt')
+        elif '>' in s:
+            blank = atom.EQUALITY_CMD().getText().split('>')
             return sympy.StrictGreaterThan(process_sympy(blank[0]), process_sympy(blank[1]))
         elif '\\leq' in s:
             blank = atom.EQUALITY_CMD().getText().split('\\leq')
@@ -604,12 +604,9 @@ def convert_atom(atom):
         elif '\\geq' in s:
             blank = atom.EQUALITY_CMD().getText().split('\\geq')
             return sympy.GreaterThan(process_sympy(blank[0]), process_sympy(blank[1]))
-        elif '\\eq' in s:
-            blank = atom.EQUALITY_CMD().getText().split('\\eq')
+        elif '=' in s:
+            blank = atom.EQUALITY_CMD().getText().split('=')
             return sympy.Eq(process_sympy(blank[0]), process_sympy(blank[1]))
-        elif '\\neq' in s:
-            blank = atom.EQUALITY_CMD().getText().split('\\neq')
-            return sympy.Ne(process_sympy(blank[0]), process_sympy(blank[1]))
         elif '\\neq' in s:
             blank = atom.EQUALITY_CMD().getText().split('\\neq')
             return sympy.Ne(process_sympy(blank[0]), process_sympy(blank[1]))
@@ -707,12 +704,12 @@ def convert_atom(atom):
         text = atom.LOGICAL().getText()
         is_percent = text.endswith("\\%")
         trim_amount = 3 if is_percent else 1
-        if "\\and" in text:
+        if "\\land" in text:
+            name = text[6:]
+        elif "\\neg" in text:
             name = text[5:]
-        elif "\\not" in text:
+        elif "\\lor" in text:
             name = text[5:]
-        elif "\\or" in text:
-            name = text[4:]
         name = name[0:len(name) - trim_amount]
         symbol_name = name
 
@@ -727,9 +724,9 @@ def convert_atom(atom):
                 symbol = parse_expr(str(VARIABLE_VALUES[name]))
         else:
             symbol = process_sympy(symbol_name)
-            if "and" in text:
+            if "land" in text:
                 symbol = And(symbol[0], symbol[1])
-            elif "or" in text:
+            elif "lor" in text:
                 symbol = sympy.Or(symbol[0], symbol[1])
             else:
                 symbol = Not(symbol)

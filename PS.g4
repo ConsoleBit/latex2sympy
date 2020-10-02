@@ -24,6 +24,7 @@ L_LEFT: '\\left';
 R_RIGHT: '\\right';
 ML_LEFT: '\\mleft';
 MR_RIGHT: '\\mright';
+BELONGS: '\\in';
 
 BAR: '|';
 L_FLOOR: '\\lfloor' | '⌊';
@@ -134,17 +135,17 @@ NUMBER:
 
 E_NOTATION: NUMBER E_NOTATION_E (SUB | ADD)? DIGIT+;
 
-EQUAL: '=' | '\\eq';
-LT: '<' | '\\lt';
+EQUAL: '=';
+LT: '<';
 LTE: '\\leq';
-GT: '>' | '\\gt';
+GT: '>';
 GTE: '\\geq';
 UNEQUAL: '!=' | '\\ne' | '\\neq';
 
 
-fragment AND: '\\and';
-fragment OR: '\\or';
-fragment NOT: '\\not';
+fragment AND: '\\land';
+fragment OR: '\\lor';
+fragment NOT: '\\neg';
 
 BANG: '!';
 
@@ -241,7 +242,7 @@ fragment SET_CMD: '\\set';
 SET: SET_CMD L_BRACE (VARIABLE | COMMA)+ R_BRACE;
 
 fragment INTERVAL_CMD: '\\close_int' | '\\open_int' | '\\lopen_int' | '\\ropen_int';
-INTERVAL: VARIABLE INTERVAL_CMD VARIABLE VARIABLE;
+INTERVAL: VARIABLE BELONGS (L_BRACKET | LT ) VARIABLE COMMA VARIABLE (R_BRACKET | GT );
 
 fragment INTERVAL_STEP_CMD: '\\step_int';
 INTERVAL_STEP: VARIABLE INTERVAL_STEP_CMD L_BRACE (VARIABLE | COMMA)+ R_BRACE ;
