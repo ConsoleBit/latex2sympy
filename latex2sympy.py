@@ -512,56 +512,14 @@ def convert_atom(atom):
         if is_percent:
             return sympy.Mul(symbol, sympy.Pow(100, -1, evaluate=False), evaluate=False)
 
-        # return the symbol
         return symbol
 
-    elif atom.UNION():
-        text = atom.UNION().getText()
-        is_percent = text.endswith("\\%")
-        trim_amount = 3 if is_percent else 1
-        name = text[7:]
-        name = name[0:len(name) - trim_amount]
-        # add hash to distinguish from regular symbols
-        # hash = hashlib.md5(name.encode()).hexdigest()
-        # symbol_name = name + hash
-        symbol_name = name
-
-        # replace the variable for already known variable values
-        if name in VARIABLE_VALUES:
-            # if a sympy class
-            if isinstance(VARIABLE_VALUES[name], tuple(sympy.core.all_classes)):
-                symbol = VARIABLE_VALUES[name]
-
-            # if NOT a sympy class
-            else:
-                symbol = parse_expr(str(VARIABLE_VALUES[name]))
-        else:
-            temps = symbol_name.replace('},', '}//').split('//')
-            blank = []
-            for temp in temps:
-                val = set(map(str, set(process_sympy(temp).name.split(','))))
-                blank.append(val)
-
-            def cus_union(lis1, lis2):
-                res = set().union(lis1, lis2)
-                return res
-
-            for i in blank[1:]:
-                a = cus_union(blank[0], i)
-                blank[0] = a
-            symbol = blank[0]
-
-        if is_percent:
-            return sympy.Mul(symbol, sympy.Pow(100, -1, evaluate=False), evaluate=False)
-
-        # return the symbol
-        return symbol
 
     elif atom.EPSILON():
         text = atom.EPSILON().getText()
         is_percent = text.endswith("\\%")
         trim_amount = 3 if is_percent else 1
-        name = text[9:]
+        name = text[4:]
         name = name[0:len(name) - trim_amount]
         # add hash to distinguish from regular symbols
         # hash = hashlib.md5(name.encode()).hexdigest()
@@ -598,6 +556,41 @@ def convert_atom(atom):
         elif '>' in s:
             blank = atom.EQUALITY_CMD().getText().split('>')
             return sympy.StrictGreaterThan(process_sympy(blank[0]), process_sympy(blank[1]))
+        elif '\\leq' in s:
+            blank = atom.EQUALITY_CMD().getText().split('\\leq')
+            return sympy.LessThan(process_sympy(blank[0]), process_sympy(blank[1]))
+        elif '\\geq' in s:
+            blank = atom.EQUALITY_CMD().getText().split('\\geq')
+            return sympy.GreaterThan(process_sympy(blank[0]), process_sympy(blank[1]))
+        elif '=' in s:
+            blank = atom.EQUALITY_CMD().getText().split('=')
+            return sympy.Eq(process_sympy(blank[0]), process_sympy(blank[1]))
+        elif '\\neq' in s:
+            blank = atom.EQUALITY_CMD().getText().split('\\neq')
+            return sympy.Ne(process_sympy(blank[0]), process_sympy(blank[1]))
+        else:
+            raise Exception("Unrecognized symbol")
+
+    elif atom.SET_CMD():
+        s = atom.SET_CMD().getText()
+        if '\\cup' in s:
+            temps = s.split('\\cup')
+            blank = []
+            for temp in temps:
+                val = set(map(str, set(process_sympy(temp).name)))
+                blank.append(val)
+
+            def cus_union(lis1, lis2):
+                res = set().union(lis1, lis2)
+                return res
+
+            for i in blank[1:]:
+                a = cus_union(blank[0], i)
+                blank[0] = a
+            symbol = blank[0]
+            return symbol
+        elif '\\cap' in s:
+            pass
         elif '\\leq' in s:
             blank = atom.EQUALITY_CMD().getText().split('\\leq')
             return sympy.LessThan(process_sympy(blank[0]), process_sympy(blank[1]))
@@ -757,7 +750,7 @@ def convert_atom(atom):
         text = atom.SUBSET().getText()
         is_percent = text.endswith("\\%")
         trim_amount = 3 if is_percent else 1
-        name = text[8:]
+        name = text[10:]
         name = name[0:len(name) - trim_amount]
         print(name)
         symbol_name = name
@@ -776,53 +769,6 @@ def convert_atom(atom):
         symbol = process_sympy(symbol_name)
         symbol_subset = (symbol[1].free_symbols).issuperset(symbol[0].free_symbols)
         return symbol_subset
-
-    elif atom.INTERSECTION():
-        text = atom.INTERSECTION().getText()
-        is_percent = text.endswith("\\%")
-        trim_amount = 3 if is_percent else 1
-        print("TRIM AMOUNT", trim_amount)
-        # intersection
-        # union{}
-        name = text[14:]
-        print(name)
-        name = name[0:len(name) - trim_amount]
-        print("ACTION", name)
-        # add hash to distinguish from regular symbols
-        # hash = hashlib.md5(name.encode()).hexdigest()
-        # symbol_name = name + hash
-        symbol_name = name
-
-        # replace the variable for already known variable values
-        if name in VARIABLE_VALUES:
-            # if a sympy class
-            if isinstance(VARIABLE_VALUES[name], tuple(sympy.core.all_classes)):
-                symbol = VARIABLE_VALUES[name]
-
-            # if NOT a sympy class
-            else:
-                symbol = parse_expr(str(VARIABLE_VALUES[name]))
-        else:
-            temps = symbol_name.replace('},', '}//').split('//')
-            blank = []
-            for temp in temps:
-                val = set(map(str, set(process_sympy(temp).name.split(','))))
-                blank.append(val)
-
-            def cus_intersection(lis1, lis2):
-                res = set().intersection(lis1, lis2)
-                return res
-
-            for i in blank[1:]:
-                a = cus_intersection(blank[0], i)
-                blank[0] = a
-            symbol = blank[0]
-
-        if is_percent:
-            return sympy.Mul(symbol, sympy.Pow(100, -1, evaluate=False), evaluate=False)
-
-        # return the symbol
-        return symbol
 
     elif atom.SET():
         text = atom.SET().getText()
