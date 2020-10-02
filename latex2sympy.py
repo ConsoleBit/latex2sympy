@@ -519,7 +519,7 @@ def convert_atom(atom):
         text = atom.UNION().getText()
         is_percent = text.endswith("\\%")
         trim_amount = 3 if is_percent else 1
-        name = text[7:]
+        name = text[5:]
         name = name[0:len(name) - trim_amount]
         # add hash to distinguish from regular symbols
         # hash = hashlib.md5(name.encode()).hexdigest()
@@ -561,7 +561,7 @@ def convert_atom(atom):
         text = atom.EPSILON().getText()
         is_percent = text.endswith("\\%")
         trim_amount = 3 if is_percent else 1
-        name = text[9:]
+        name = text[4:]
         name = name[0:len(name) - trim_amount]
         # add hash to distinguish from regular symbols
         # hash = hashlib.md5(name.encode()).hexdigest()
@@ -580,6 +580,39 @@ def convert_atom(atom):
         else:
             symbol = process_sympy(symbol_name)
             if (symbol[0].free_symbols) in (symbol[1].free_symbols):
+                symbol = True
+
+            # symbol = list(map(list, [symbol[0].name, symbol[1].name]))
+
+        if is_percent:
+            return sympy.Mul(symbol, sympy.Pow(100, -1, evaluate=False), evaluate=False)
+
+        # return the symbol
+        return symbol
+
+    elif atom.NOTIN():
+        text = atom.NOTIN().getText()
+        is_percent = text.endswith("\\%")
+        trim_amount = 3 if is_percent else 1
+        name = text[7:]
+        name = name[0:len(name) - trim_amount]
+        # add hash to distinguish from regular symbols
+        # hash = hashlib.md5(name.encode()).hexdigest()
+        # symbol_name = name + hash
+        symbol_name = name
+
+        # replace the variable for already known variable values
+        if name in VARIABLE_VALUES:
+            # if a sympy class
+            if isinstance(VARIABLE_VALUES[name], tuple(sympy.core.all_classes)):
+                symbol = VARIABLE_VALUES[name]
+
+            # if NOT a sympy class
+            else:
+                symbol = parse_expr(str(VARIABLE_VALUES[name]))
+        else:
+            symbol = process_sympy(symbol_name)
+            if (symbol[0].free_symbols) not in (symbol[1].free_symbols):
                 symbol = True
 
             # symbol = list(map(list, [symbol[0].name, symbol[1].name]))
@@ -760,7 +793,7 @@ def convert_atom(atom):
         text = atom.SUBSET().getText()
         is_percent = text.endswith("\\%")
         trim_amount = 3 if is_percent else 1
-        name = text[8:]
+        name = text[10:]
         name = name[0:len(name) - trim_amount]
         print(name)
         symbol_name = name
@@ -787,7 +820,7 @@ def convert_atom(atom):
         print("TRIM AMOUNT", trim_amount)
         # intersection
         # union{}
-        name = text[14:]
+        name = text[5:]
         print(name)
         name = name[0:len(name) - trim_amount]
         print("ACTION", name)
