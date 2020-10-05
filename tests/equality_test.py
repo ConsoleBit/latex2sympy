@@ -7,19 +7,19 @@ y = Symbol('y', real=True)
 
 
 def test_lt_variable():
-    assert_equal("\\variable{x}\\lt\\variable{y}", (Symbol('x', real=True) < Symbol('y', real=True)))
+    assert_equal("\\variable{x}<\\variable{y}", (Symbol('x', real=True) < Symbol('y', real=True)))
 
 
 def test_lt_digit():
-    assert_equal("4\\lt5", StrictLessThan(4, 5))
+    assert_equal("4<5", StrictLessThan(4, 5))
 
 
 def test_lt_greek_letter():
-    assert_equal("\\alpha\\lt\\beta", (Symbol('alpha', real=True) < Symbol('beta', real=True)))
+    assert_equal("\\alpha<\\beta", (Symbol('alpha', real=True) < Symbol('beta', real=True)))
 
 
 def test_lt_trig():
-    assert_equal("\\sin(90)\\lt\\sin(45)", StrictLessThan(sin(90), sin(45)))
+    assert_equal("\\sin(90)<\\sin(45)", StrictLessThan(sin(90), sin(45)))
 
 
 def test_leq_variable():
@@ -39,19 +39,19 @@ def test_leq_trig():
 
 
 def test_gt_variable():
-    assert_equal("\\variable{x}\\gt\\variable{y}", (Symbol('x', real=True) > Symbol('y', real=True)))
+    assert_equal("\\variable{x}>\\variable{y}", (Symbol('x', real=True) > Symbol('y', real=True)))
 
 
 def test_gt_digit():
-    assert_equal("4\\gt5", StrictGreaterThan(4, 5))
+    assert_equal("4>5", StrictGreaterThan(4, 5))
 
 
 def test_gt_greek_letter():
-    assert_equal("\\alpha\\gt\\beta", (Symbol('alpha', real=True) > Symbol('beta', real=True)))
+    assert_equal("\\alpha>\\beta", (Symbol('alpha', real=True) > Symbol('beta', real=True)))
 
 
 def test_gt_trig():
-    assert_equal("\\sin(90)\\gt\\sin(45)", StrictGreaterThan(sin(90), sin(45)))
+    assert_equal("\\sin(90)>\\sin(45)", StrictGreaterThan(sin(90), sin(45)))
 
 
 def test_geq_variable():
@@ -71,19 +71,19 @@ def test_geq_trig():
 
 
 def test_eq_variable():
-    assert_equal("\\variable{x}\\eq\\variable{y}", (Symbol('x', real=True) == Symbol('y', real=True)))
+    assert_equal("\\variable{x}=\\variable{y}", (Symbol('x', real=True) == Symbol('y', real=True)))
 
 
 def test_eq_digit():
-    assert_equal("4\\eq5", Eq(4, 5))
+    assert_equal("4=5", Eq(4, 5))
 
 
 def test_eq_greek_letter():
-    assert_equal("\\alpha\\eq\\beta", (Symbol('alpha', real=True) == Symbol('beta', real=True)))
+    assert_equal("\\alpha=\\beta", (Symbol('alpha', real=True) == Symbol('beta', real=True)))
 
 
 def test_eq_trig():
-    assert_equal("\\sin(90)\\eq\\sin(45)", Eq(sin(90), sin(45)))
+    assert_equal("\\sin(90)=\\sin(45)", Eq(sin(90), sin(45)))
 
 
 def test_neq_variable():

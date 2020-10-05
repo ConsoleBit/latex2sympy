@@ -7,9 +7,10 @@ x = Symbol('x', real=True)
 y = Symbol('y', real=True)
 
 
+
 def test_lopen_int_letter():
-    assert_equal("\\variable{p}\\lopen_int\\variable{x}\\variable{y}", Symbol('x' + hashlib.md5('x'.encode()).hexdigest(), real=True) < Symbol('p' + hashlib.md5('p'.encode()).hexdigest(), real=True) <= Symbol('y' + hashlib.md5('y'.encode()).hexdigest(), real=True))
+    assert_equal("\\variable{p}\\in<\\variable{x},\\variable{y}]", Symbol('x', real=True) < Symbol('p', real=True) <= Symbol('y', real=True))
 
 
 def test_lopen_int_digit():
-    assert_equal("\\variable{3}\\lopen_int\\variable{0}\\variable{6}", Symbol('0' + hashlib.md5('0'.encode()).hexdigest(), real=True) < Symbol('3' + hashlib.md5('3'.encode()).hexdigest(), real=True) <= Symbol('6' + hashlib.md5('6'.encode()).hexdigest(), real=True))
+    assert_equal("\\variable{3}\\in<\\variable{0},\\variable{6}]", Symbol('0', real=True) < Symbol('3', real=True) <= Symbol('6', real=True))
