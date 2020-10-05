@@ -37,15 +37,15 @@ process_sympy("\\frac{d}{dx} x^{2}")
 |`\sum_{i = 1}^{n} i`|![](https://latex.codecogs.com/gif.latex?%5CLARGE%20%5Csum_%7Bi%20%3D%201%7D%5E%7Bn%7D%20i)|`Sum(i, (i, 1, n))`|
 |`\int_{a}^{b} \frac{dt}{t}`|![](https://latex.codecogs.com/gif.latex?%5CLARGE%20%5Cint_%7Ba%7D%5E%7Bb%7D%20%5Cfrac%7Bdt%7D%7Bt%7D)|`Integral(1/t, (t, a, b))`|
 |`(2x^3 - x + z)|_{x=3}`|![](https://latex.codecogs.com/gif.latex?%5CLARGE%20%282x%5E3%20-%20x%20&plus;%20z%29%7C_%7Bx%3D3%7D)|`z + 51`
-|`\variable{x}\lt\variable{y}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20x%3Cy%20)|`x<y`
-|`\variable{x}\gt\variable{y}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%3Ey)|`x>y`
+|`\variable{x}<\variable{y}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20x%3Cy%20)|`x<y`
+|`\variable{x}>\variable{y}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%3Ey)|`x>y`
 |`\variable{x}\leq\variable{y}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%5Cleq%20y)|`x<=y`
 |`\variable{x}\geq\variable{y}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%5Cgeq%20y)|`x>=y`
-|`\variable{x}\eq\variable{y}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%20=%20y)|`Eq(x, y)`
+|`\variable{x}=\variable{y}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%20=%20y)|`Eq(x, y)`
 |`\variable{x}\neq\variable{y}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%20%5Cneq%20y%20)|`Ne(x, y)`
-|`\and{\variable{x},\variable{y}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%20%5Cland%20y)|`x & y`
-|`\or{\variable{x},\variable{y}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%20%5Clor%20y)| `x or y`
-|`\not{\variable{x}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%20%5Cneg%20y)|`~x`
+|`\land{\variable{x},\variable{y}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%20%5Cland%20y)|`x & y`
+|`\lor{\variable{x},\variable{y}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%20%5Clor%20y)| `x or y`
+|`\neg{\variable{x}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20x%20%5Cneg%20y)|`~x`
 |`\nrt{\variable{x},\variable{n}}`|![](http://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20%20%5Csqrt%5Bn%5D%7Bx%7D%20)|`x**(1/n)`
 |`\equivalence{\variable{a},\variable{b}`|![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%205%5Cequiv%204)|`Equivalent(a, b)`
 |`\variable{x}\open_int\variable{a}\variable{b})`|![](https://latex.codecogs.com/gif.latex?%5Cdpi%7B110%7D%20x%5Cepsilon%3C2,6%3E%20)|`(x > a) & (x < b)`
