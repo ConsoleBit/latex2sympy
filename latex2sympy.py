@@ -538,6 +538,32 @@ def convert_atom(atom):
         else:
             raise Exception("Unrecognized symbol")
 
+
+    elif atom.FOR_CMD():
+        s = atom.FOR_CMD().getText().split('\\for')
+        s = process_sympy(s[0]),process_sympy(s[1])
+        return list(s)
+
+    elif atom.LEN_CMD():
+        text = atom.LEN_CMD().getText()
+        is_percent = text.endswith("\\%")
+        trim_amount = 3 if is_percent else 1
+        name = text[5:]
+        name = name[0:len(name) - trim_amount]
+        name = process_sympy(name)
+        return name
+
+    elif atom.NOT_CMD():
+        text = atom.NOT_CMD().getText()
+        is_percent = text.endswith("\\%")
+        trim_amount = 3 if is_percent else 1
+        name = text[5:]
+        name = name[0:len(name) - trim_amount]
+        name = process_sympy(name)
+        return sympy.Not(name)
+
+
+
     elif atom.SET_CMD():
         s = atom.SET_CMD().getText()
         if '\\cup' in s:
@@ -747,6 +773,18 @@ def convert_atom(atom):
         # return the symbol
         return symbol
 
+    elif atom.MULTIPLE():
+        text = atom.MULTIPLE().getText()
+        is_percent = text.endswith("\\%")
+        # trim_amount = 3 if is_percent else 1
+        for i in range(0,text.count('\\')):
+            temp = text.rfind('\\')
+            imp = text[temp:][:text[temp:].find('}')+1]
+            new = process_sympy(imp)
+            ip = text[temp:][:text[temp:].find('}')+1]
+            text = text.replace(ip,new)
+        return text
+
 
     elif atom.LOGICAL():
         text = atom.LOGICAL().getText()
@@ -787,7 +825,6 @@ def convert_atom(atom):
 
         # return the symbol
         return symbol
-
 
     elif atom.SET_EQUALITY():
         text = atom.SET_EQUALITY().getText()
