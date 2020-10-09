@@ -553,16 +553,6 @@ def convert_atom(atom):
         name = process_sympy(name)
         return name
 
-    elif atom.NOT_CMD():
-        text = atom.NOT_CMD().getText()
-        is_percent = text.endswith("\\%")
-        trim_amount = 3 if is_percent else 1
-        name = text[5:]
-        name = name[0:len(name) - trim_amount]
-        name = process_sympy(name)
-        return sympy.Not(name)
-
-
 
     elif atom.SET_CMD():
         s = atom.SET_CMD().getText()
@@ -773,28 +763,20 @@ def convert_atom(atom):
         # return the symbol
         return symbol
 
-    elif atom.MULTIPLE():
-        text = atom.MULTIPLE().getText()
-        is_percent = text.endswith("\\%")
-        # trim_amount = 3 if is_percent else 1
-        for i in range(0,text.count('\\')):
-            temp = text.rfind('\\')
-            imp = text[temp:][:text[temp:].find('}')+1]
-            new = process_sympy(imp)
-            ip = text[temp:][:text[temp:].find('}')+1]
-            text = text.replace(ip,new)
-        return text
+    elif atom.CONDITIONAL():
+        text = atom.CONDITIONAL().getText()
+
 
 
     elif atom.LOGICAL():
         text = atom.LOGICAL().getText()
         is_percent = text.endswith("\\%")
         trim_amount = 3 if is_percent else 1
-        if "\\land" in text:
+        if "\\land" in text[:6]:
             name = text[6:]
-        elif "\\neg" in text:
+        elif "\\neg" in text[:5]:
             name = text[5:]
-        elif "\\lor" in text:
+        elif "\\lor" in text[:5]:
             name = text[5:]
         name = name[0:len(name) - trim_amount]
         symbol_name = name
@@ -810,9 +792,9 @@ def convert_atom(atom):
                 symbol = parse_expr(str(VARIABLE_VALUES[name]))
         else:
             symbol = process_sympy(symbol_name)
-            if "land" in text:
+            if "land" in text[:6]:
                 symbol = And(symbol[0], symbol[1])
-            elif "lor" in text:
+            elif "lor" in text[:5]:
                 symbol = sympy.Or(symbol[0], symbol[1])
             else:
                 symbol = Not(symbol)
