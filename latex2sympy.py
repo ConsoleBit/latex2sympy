@@ -560,7 +560,7 @@ def convert_atom(atom):
         trim_amount = 3 if is_percent else 1
         name = text[5:]
         name = name[0:len(name) - trim_amount]
-        name = process_sympy(name)
+        name = process_sympy(name,variable_values=VARIABLE_VALUES)
         return name
 
 
