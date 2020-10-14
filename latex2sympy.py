@@ -1,9 +1,8 @@
-import sympy
 import antlr4
+import sympy
 from antlr4.error.ErrorListener import ErrorListener
 from sympy.core.numbers import Zero, One
-from sympy.core.operations import AssocOp
-from sympy.logic.boolalg import And, Or, Not, BooleanFalse, BooleanTrue
+from sympy.logic.boolalg import And, Not, BooleanFalse, BooleanTrue
 
 try:
     from gen.PSParser import PSParser
@@ -17,8 +16,6 @@ except Exception:
 from sympy.printing.str import StrPrinter
 
 from sympy.parsing.sympy_parser import parse_expr
-
-import hashlib
 
 VARIABLE_VALUES = {}
 
@@ -297,14 +294,16 @@ def convert_postfix_list(arr, i=0):
 
     res = convert_postfix(arr[i])
 
-    if isinstance(res, sympy.Expr) or isinstance(res, sympy.And) or isinstance(res, sympy.Not) or isinstance(res, sympy.Or) or isinstance(res,
-                                                                                   sympy.Matrix) or res is sympy.S.EmptySet or isinstance(
-            res,
-            bool) or isinstance(
+    if isinstance(res, sympy.Expr) or isinstance(res, sympy.And) or isinstance(res, sympy.Not) or isinstance(res,
+                                                                                                             sympy.Or) or isinstance(
+        res,
+        sympy.Matrix) or res is sympy.S.EmptySet or isinstance(
+        res,
+        bool) or isinstance(
         res,
         set) or isinstance(
         res,
-        sympy.Set) or isinstance(res, list) or isinstance(res, (Zero, One, BooleanFalse, BooleanTrue)):
+        sympy.Set) or isinstance(res, (list, tuple)) or isinstance(res, (Zero, One, BooleanFalse, BooleanTrue)):
         if i == len(arr) - 1:
             return res  # nothing to multiply by
         else:
@@ -492,10 +491,18 @@ def convert_atom(atom):
         trim_amount = 3 if is_percent else 1
         name = text[10:]
         name = name[0:len(name) - trim_amount]
+        symbol_name = name
+        dimension = None
+        if "_" in name:
+            variables = name.split('_')
+            variable, dimension = variables[0], "_".join(variables[1:])
+            dimension = dimension[1: len(dimension) - 1]
+            dimension = process_sympy(dimension)
+            symbol_name = variable
+            print("Variable", variable, ", Dimension", dimension)
         # add hash to distinguish from regular symbols
         # hash = hashlib.md5(name.encode()).hexdigest()
         # symbol_name = name + hash
-        symbol_name = name
 
         # replace the variable for already known variable values
         if name in VARIABLE_VALUES:
@@ -512,6 +519,9 @@ def convert_atom(atom):
         if is_percent:
             return sympy.Mul(symbol, sympy.Pow(100, -1, evaluate=False), evaluate=False)
 
+        if dimension:
+            symbolname = StrPrinter().doprint(dimension)
+            return sympy.Symbol(symbol_name + "(" + symbolname + ")")
         return symbol
 
 
@@ -541,7 +551,7 @@ def convert_atom(atom):
 
     elif atom.FOR_CMD():
         s = atom.FOR_CMD().getText().split('\\for')
-        s = process_sympy(s[0]),process_sympy(s[1])
+        s = process_sympy(s[0]), process_sympy(s[1])
         return list(s)
 
     elif atom.LEN_CMD():
@@ -681,7 +691,7 @@ def convert_atom(atom):
         text = atom.SUMMATION().getText()
         is_percent = text.endswith("\\%")
         trim_amount = 3 if is_percent else 1
-        name = text[11:]
+        name = text[5:]
 
         name = name[0:len(name) - trim_amount]
         # add hash to distinguish from regular symbols
@@ -752,8 +762,7 @@ def convert_atom(atom):
                 symbol = parse_expr(str(VARIABLE_VALUES[name]))
         else:
             symbol = process_sympy(symbol_name)
-            symbol = sympy.Pow(symbol[0], 1/symbol[1])
-
+            symbol = sympy.Pow(symbol[0], 1 / symbol[1])
 
             # symbol = list(map(list, [symbol[0].name, symbol[1].name]))
 
@@ -798,7 +807,6 @@ def convert_atom(atom):
                 symbol = sympy.Or(symbol[0], symbol[1])
             else:
                 symbol = Not(symbol)
-
 
             # symbol = list(map(list, [symbol[0].name, symbol[1].name]))
 
