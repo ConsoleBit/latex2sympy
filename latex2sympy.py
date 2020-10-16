@@ -561,8 +561,15 @@ def convert_atom(atom):
         name = text[5:]
         name = name[0:len(name) - trim_amount]
         name = process_sympy(name,variable_values=VARIABLE_VALUES)
-        return name
+        return sympy.Symbol("len(" + StrPrinter().doprint(name) + ")")
 
+    elif atom.CONDITIONAL_CMD():
+        text = atom.CONDITIONAL_CMD().getText()
+        if 'cand' in text:
+            name = text.split('\\cand')
+
+        name0, name1 = process_sympy(name[0],variable_values=VARIABLE_VALUES), process_sympy(name[1],variable_values=VARIABLE_VALUES)
+        return sympy.Symbol(StrPrinter().doprint(name0) + " and " + StrPrinter().doprint(name1))
 
     elif atom.SET_CMD():
         s = atom.SET_CMD().getText()
@@ -771,11 +778,6 @@ def convert_atom(atom):
 
         # return the symbol
         return symbol
-
-    elif atom.CONDITIONAL():
-        text = atom.CONDITIONAL().getText()
-
-
 
     elif atom.LOGICAL():
         text = atom.LOGICAL().getText()

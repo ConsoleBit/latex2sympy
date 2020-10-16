@@ -7,7 +7,7 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3~")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3}")
         buf.write("\u02f9\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
@@ -262,7 +262,7 @@ def serializedATN():
         buf.write("\7q\2\2\u01f3\u01ff\7z\2\2\u01f4\u01ff\7s\2\2\u01f5\u01ff")
         buf.write("\7t\2\2\u01f6\u01ff\7x\2\2\u01f7\u01ff\7|\2\2\u01f8\u01ff")
         buf.write("\7u\2\2\u01f9\u01ff\7v\2\2\u01fa\u01ff\7r\2\2\u01fb\u01ff")
-        buf.write("\7}\2\2\u01fc\u01ff\7y\2\2\u01fd\u01ff\7~\2\2\u01fe\u01e7")
+        buf.write("\7}\2\2\u01fc\u01ff\7y\2\2\u01fd\u01ff\7{\2\2\u01fe\u01e7")
         buf.write("\3\2\2\2\u01fe\u01ec\3\2\2\2\u01fe\u01ed\3\2\2\2\u01fe")
         buf.write("\u01ee\3\2\2\2\u01fe\u01ef\3\2\2\2\u01fe\u01f0\3\2\2\2")
         buf.write("\u01fe\u01f1\3\2\2\2\u01fe\u01f2\3\2\2\2\u01fe\u01f3\3")
@@ -449,7 +449,7 @@ class PSParser ( Parser ):
                       "GREEK_LETTER", "SYMBOL", "VARIABLE", "SET_CMD", "INTERVAL", 
                       "ABSOLUTE", "SUMMATION", "EQUIVALENCE", "SET_EQUALITY", 
                       "NRT", "LEN_CMD", "EQUALITY_CMD", "CONDITIONAL_CMD", 
-                      "LOGICAL", "FOR_CMD", "CONDITIONAL" ]
+                      "LOGICAL", "FOR_CMD" ]
 
     RULE_accent_symbol = 0
     RULE_math = 1
@@ -641,7 +641,6 @@ class PSParser ( Parser ):
     CONDITIONAL_CMD=121
     LOGICAL=122
     FOR_CMD=123
-    CONDITIONAL=124
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -1758,7 +1757,7 @@ class PSParser ( Parser ):
                 self.state = 239
                 self.unary()
                 pass
-            elif token in [PSParser.L_PAREN, PSParser.L_BRACE, PSParser.L_BRACKET, PSParser.L_LEFT, PSParser.ML_LEFT, PSParser.BAR, PSParser.L_FLOOR, PSParser.L_CEIL, PSParser.FUNC_LIM, PSParser.FUNC_INT, PSParser.FUNC_SUM, PSParser.FUNC_PROD, PSParser.FUNC_LOG, PSParser.FUNC_LN, PSParser.FUNC_EXP, PSParser.FUNC_SIN, PSParser.FUNC_COS, PSParser.FUNC_TAN, PSParser.FUNC_CSC, PSParser.FUNC_SEC, PSParser.FUNC_COT, PSParser.FUNC_ARCSIN, PSParser.FUNC_ARCCOS, PSParser.FUNC_ARCTAN, PSParser.FUNC_ARCCSC, PSParser.FUNC_ARCSEC, PSParser.FUNC_ARCCOT, PSParser.FUNC_SINH, PSParser.FUNC_COSH, PSParser.FUNC_TANH, PSParser.FUNC_ARSINH, PSParser.FUNC_ARCOSH, PSParser.FUNC_ARTANH, PSParser.FUNC_ARCSINH, PSParser.FUNC_ARCCOSH, PSParser.FUNC_ARCTANH, PSParser.FUNC_SQRT, PSParser.FUNC_GCD, PSParser.FUNC_LCM, PSParser.FUNC_FLOOR, PSParser.FUNC_CEIL, PSParser.FUNC_MAX, PSParser.FUNC_MIN, PSParser.CMD_FRAC, PSParser.CMD_BINOM, PSParser.CMD_CHOOSE, PSParser.CMD_MATHIT, PSParser.CMD_OPERATORNAME, PSParser.CMD_MATRIX_START, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.EXP_E, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.SET_CMD, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.SUMMATION, PSParser.EQUIVALENCE, PSParser.NRT, PSParser.LEN_CMD, PSParser.EQUALITY_CMD, PSParser.LOGICAL, PSParser.FOR_CMD, PSParser.CONDITIONAL]:
+            elif token in [PSParser.L_PAREN, PSParser.L_BRACE, PSParser.L_BRACKET, PSParser.L_LEFT, PSParser.ML_LEFT, PSParser.BAR, PSParser.L_FLOOR, PSParser.L_CEIL, PSParser.FUNC_LIM, PSParser.FUNC_INT, PSParser.FUNC_SUM, PSParser.FUNC_PROD, PSParser.FUNC_LOG, PSParser.FUNC_LN, PSParser.FUNC_EXP, PSParser.FUNC_SIN, PSParser.FUNC_COS, PSParser.FUNC_TAN, PSParser.FUNC_CSC, PSParser.FUNC_SEC, PSParser.FUNC_COT, PSParser.FUNC_ARCSIN, PSParser.FUNC_ARCCOS, PSParser.FUNC_ARCTAN, PSParser.FUNC_ARCCSC, PSParser.FUNC_ARCSEC, PSParser.FUNC_ARCCOT, PSParser.FUNC_SINH, PSParser.FUNC_COSH, PSParser.FUNC_TANH, PSParser.FUNC_ARSINH, PSParser.FUNC_ARCOSH, PSParser.FUNC_ARTANH, PSParser.FUNC_ARCSINH, PSParser.FUNC_ARCCOSH, PSParser.FUNC_ARCTANH, PSParser.FUNC_SQRT, PSParser.FUNC_GCD, PSParser.FUNC_LCM, PSParser.FUNC_FLOOR, PSParser.FUNC_CEIL, PSParser.FUNC_MAX, PSParser.FUNC_MIN, PSParser.CMD_FRAC, PSParser.CMD_BINOM, PSParser.CMD_CHOOSE, PSParser.CMD_MATHIT, PSParser.CMD_OPERATORNAME, PSParser.CMD_MATRIX_START, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.EXP_E, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.SET_CMD, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.SUMMATION, PSParser.EQUIVALENCE, PSParser.NRT, PSParser.LEN_CMD, PSParser.EQUALITY_CMD, PSParser.CONDITIONAL_CMD, PSParser.LOGICAL, PSParser.FOR_CMD]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 241 
                 self._errHandler.sync(self)
@@ -1854,7 +1853,7 @@ class PSParser ( Parser ):
                 self.state = 248
                 self.unary_nofunc()
                 pass
-            elif token in [PSParser.L_PAREN, PSParser.L_BRACE, PSParser.L_BRACKET, PSParser.L_LEFT, PSParser.ML_LEFT, PSParser.BAR, PSParser.L_FLOOR, PSParser.L_CEIL, PSParser.FUNC_LIM, PSParser.FUNC_INT, PSParser.FUNC_SUM, PSParser.FUNC_PROD, PSParser.FUNC_LOG, PSParser.FUNC_LN, PSParser.FUNC_EXP, PSParser.FUNC_SIN, PSParser.FUNC_COS, PSParser.FUNC_TAN, PSParser.FUNC_CSC, PSParser.FUNC_SEC, PSParser.FUNC_COT, PSParser.FUNC_ARCSIN, PSParser.FUNC_ARCCOS, PSParser.FUNC_ARCTAN, PSParser.FUNC_ARCCSC, PSParser.FUNC_ARCSEC, PSParser.FUNC_ARCCOT, PSParser.FUNC_SINH, PSParser.FUNC_COSH, PSParser.FUNC_TANH, PSParser.FUNC_ARSINH, PSParser.FUNC_ARCOSH, PSParser.FUNC_ARTANH, PSParser.FUNC_ARCSINH, PSParser.FUNC_ARCCOSH, PSParser.FUNC_ARCTANH, PSParser.FUNC_SQRT, PSParser.FUNC_GCD, PSParser.FUNC_LCM, PSParser.FUNC_FLOOR, PSParser.FUNC_CEIL, PSParser.FUNC_MAX, PSParser.FUNC_MIN, PSParser.CMD_FRAC, PSParser.CMD_BINOM, PSParser.CMD_CHOOSE, PSParser.CMD_MATHIT, PSParser.CMD_OPERATORNAME, PSParser.CMD_MATRIX_START, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.EXP_E, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.SET_CMD, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.SUMMATION, PSParser.EQUIVALENCE, PSParser.NRT, PSParser.LEN_CMD, PSParser.EQUALITY_CMD, PSParser.LOGICAL, PSParser.FOR_CMD, PSParser.CONDITIONAL]:
+            elif token in [PSParser.L_PAREN, PSParser.L_BRACE, PSParser.L_BRACKET, PSParser.L_LEFT, PSParser.ML_LEFT, PSParser.BAR, PSParser.L_FLOOR, PSParser.L_CEIL, PSParser.FUNC_LIM, PSParser.FUNC_INT, PSParser.FUNC_SUM, PSParser.FUNC_PROD, PSParser.FUNC_LOG, PSParser.FUNC_LN, PSParser.FUNC_EXP, PSParser.FUNC_SIN, PSParser.FUNC_COS, PSParser.FUNC_TAN, PSParser.FUNC_CSC, PSParser.FUNC_SEC, PSParser.FUNC_COT, PSParser.FUNC_ARCSIN, PSParser.FUNC_ARCCOS, PSParser.FUNC_ARCTAN, PSParser.FUNC_ARCCSC, PSParser.FUNC_ARCSEC, PSParser.FUNC_ARCCOT, PSParser.FUNC_SINH, PSParser.FUNC_COSH, PSParser.FUNC_TANH, PSParser.FUNC_ARSINH, PSParser.FUNC_ARCOSH, PSParser.FUNC_ARTANH, PSParser.FUNC_ARCSINH, PSParser.FUNC_ARCCOSH, PSParser.FUNC_ARCTANH, PSParser.FUNC_SQRT, PSParser.FUNC_GCD, PSParser.FUNC_LCM, PSParser.FUNC_FLOOR, PSParser.FUNC_CEIL, PSParser.FUNC_MAX, PSParser.FUNC_MIN, PSParser.CMD_FRAC, PSParser.CMD_BINOM, PSParser.CMD_CHOOSE, PSParser.CMD_MATHIT, PSParser.CMD_OPERATORNAME, PSParser.CMD_MATRIX_START, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.EXP_E, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.SET_CMD, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.SUMMATION, PSParser.EQUIVALENCE, PSParser.NRT, PSParser.LEN_CMD, PSParser.EQUALITY_CMD, PSParser.CONDITIONAL_CMD, PSParser.LOGICAL, PSParser.FOR_CMD]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 249
                 self.postfix()
@@ -2384,7 +2383,7 @@ class PSParser ( Parser ):
                     self.state = 310
                     self._errHandler.sync(self)
                     token = self._input.LA(1)
-                    if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.SET_CMD, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.SUMMATION, PSParser.EQUIVALENCE, PSParser.NRT, PSParser.LEN_CMD, PSParser.EQUALITY_CMD, PSParser.LOGICAL, PSParser.FOR_CMD, PSParser.CONDITIONAL]:
+                    if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.SET_CMD, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.SUMMATION, PSParser.EQUIVALENCE, PSParser.NRT, PSParser.LEN_CMD, PSParser.EQUALITY_CMD, PSParser.CONDITIONAL_CMD, PSParser.LOGICAL, PSParser.FOR_CMD]:
                         self.state = 305
                         self.atom()
                         pass
@@ -2504,7 +2503,7 @@ class PSParser ( Parser ):
                     self.state = 330
                     self._errHandler.sync(self)
                     token = self._input.LA(1)
-                    if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.SET_CMD, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.SUMMATION, PSParser.EQUIVALENCE, PSParser.NRT, PSParser.LEN_CMD, PSParser.EQUALITY_CMD, PSParser.LOGICAL, PSParser.FOR_CMD, PSParser.CONDITIONAL]:
+                    if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.SET_CMD, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.SUMMATION, PSParser.EQUIVALENCE, PSParser.NRT, PSParser.LEN_CMD, PSParser.EQUALITY_CMD, PSParser.CONDITIONAL_CMD, PSParser.LOGICAL, PSParser.FOR_CMD]:
                         self.state = 325
                         self.atom()
                         pass
@@ -3461,8 +3460,8 @@ class PSParser ( Parser ):
         def LEN_CMD(self):
             return self.getToken(PSParser.LEN_CMD, 0)
 
-        def CONDITIONAL(self):
-            return self.getToken(PSParser.CONDITIONAL, 0)
+        def CONDITIONAL_CMD(self):
+            return self.getToken(PSParser.CONDITIONAL_CMD, 0)
 
         def getRuleIndex(self):
             return PSParser.RULE_atom
@@ -3606,10 +3605,10 @@ class PSParser ( Parser ):
                 self.state = 506
                 self.match(PSParser.LEN_CMD)
                 pass
-            elif token in [PSParser.CONDITIONAL]:
+            elif token in [PSParser.CONDITIONAL_CMD]:
                 self.enterOuterAlt(localctx, 19)
                 self.state = 507
-                self.match(PSParser.CONDITIONAL)
+                self.match(PSParser.CONDITIONAL_CMD)
                 pass
             else:
                 raise NoViableAltException(self)
@@ -5380,7 +5379,7 @@ class PSParser ( Parser ):
             self.state = 738
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.SET_CMD, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.SUMMATION, PSParser.EQUIVALENCE, PSParser.NRT, PSParser.LEN_CMD, PSParser.EQUALITY_CMD, PSParser.LOGICAL, PSParser.FOR_CMD, PSParser.CONDITIONAL]:
+            if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.SET_CMD, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.SUMMATION, PSParser.EQUIVALENCE, PSParser.NRT, PSParser.LEN_CMD, PSParser.EQUALITY_CMD, PSParser.CONDITIONAL_CMD, PSParser.LOGICAL, PSParser.FOR_CMD]:
                 self.state = 733
                 self.atom()
                 pass
@@ -5457,7 +5456,7 @@ class PSParser ( Parser ):
             self.state = 746
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.SET_CMD, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.SUMMATION, PSParser.EQUIVALENCE, PSParser.NRT, PSParser.LEN_CMD, PSParser.EQUALITY_CMD, PSParser.LOGICAL, PSParser.FOR_CMD, PSParser.CONDITIONAL]:
+            if token in [PSParser.CMD_MATHIT, PSParser.ACCENT_OVERLINE, PSParser.ACCENT_BAR, PSParser.DIFFERENTIAL, PSParser.LETTER_NO_E, PSParser.NUMBER, PSParser.E_NOTATION, PSParser.PERCENT_NUMBER, PSParser.GREEK_LETTER, PSParser.SYMBOL, PSParser.VARIABLE, PSParser.SET_CMD, PSParser.INTERVAL, PSParser.ABSOLUTE, PSParser.SUMMATION, PSParser.EQUIVALENCE, PSParser.NRT, PSParser.LEN_CMD, PSParser.EQUALITY_CMD, PSParser.CONDITIONAL_CMD, PSParser.LOGICAL, PSParser.FOR_CMD]:
                 self.state = 741
                 self.atom()
                 pass
