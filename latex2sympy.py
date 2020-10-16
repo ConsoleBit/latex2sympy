@@ -499,7 +499,6 @@ def convert_atom(atom):
             dimension = dimension[1: len(dimension) - 1]
             dimension = process_sympy(dimension)
             symbol_name = variable
-            print("Variable", variable, ", Dimension", dimension)
         # add hash to distinguish from regular symbols
         # hash = hashlib.md5(name.encode()).hexdigest()
         # symbol_name = name + hash
